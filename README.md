@@ -4,7 +4,8 @@
 
 Trakt MCP server
 
-<img style="justify-content:center;text-align: center;width: 260px; height: auto;" alt="Trakt API" src="public/logo.png" />
+<img style="justify-content:center;text-align: center;width: 95px; height: auto;" width="793" height="411" alt="image" src="https://github.com/user-attachments/assets/abed1a04-d69b-4ab4-a490-d606064df72d" />
+<img style="justify-content:center;text-align: center;width: 252px; height: auto;" alt="Trakt API" src="public/logo.png" />
 
 </h1>
 
@@ -102,6 +103,3 @@ uv pip install -e . pytest ruff
 .venv/bin/ruff check .
 ```
 
-## Licence
-
-MIT
