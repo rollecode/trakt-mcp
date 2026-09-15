@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 APP = "trakt"
 TITLE = "Trakt"
 BASE_URL = "https://api.trakt.tv"
-DEFAULT_PORT = 8448
+DEFAULT_PORT = 8580
 
 ENV_CLIENT_ID = "TRAKT_CLIENT_ID"
 ENV_CLIENT_SECRET = "TRAKT_CLIENT_SECRET"
