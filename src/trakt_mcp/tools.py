@@ -35,135 +35,135 @@ def create_comments(body: dict) -> str:
 
 
 @mcp.tool(annotations=_WRITE)
-def create_comments_by_id_like(id_: str, body: dict) -> str:
+def create_comments_by_id_like(id: str, body: dict) -> str:
     """Like a comment.
 
     POST /comments/{id}/like
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/comments/{id_}/like", query=None, body=body, form=None)
+    return call("POST", f"/comments/{id}/like", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_comments_by_id_reactions_by_reaction_type(id_: str, reaction_type: str, body: dict) -> str:
+def create_comments_by_id_reactions_by_reaction_type(id: str, reaction_type: str, body: dict) -> str:
     """Add comment reaction.
 
     POST /comments/{id}/reactions/{reaction_type}
 
     Args:
-        id_: Path parameter.
+        id: Path parameter.
         reaction_type: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/comments/{id_}/reactions/{reaction_type}", query=None, body=body, form=None)
+    return call("POST", f"/comments/{id}/reactions/{reaction_type}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_comments_by_id_replies(id_: str, body: dict) -> str:
+def create_comments_by_id_replies(id: str, body: dict) -> str:
     """Post a reply for a comment.
 
     POST /comments/{id}/replies
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/comments/{id_}/replies", query=None, body=body, form=None)
+    return call("POST", f"/comments/{id}/replies", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_comments_by_id_report(id_: str, body: dict) -> str:
+def create_comments_by_id_report(id: str, body: dict) -> str:
     """Report a comment.
 
     POST /comments/{id}/report
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/comments/{id_}/report", query=None, body=body, form=None)
+    return call("POST", f"/comments/{id}/report", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_episodes_by_id_report(id_: str, body: dict) -> str:
+def create_episodes_by_id_report(id: str, body: dict) -> str:
     """Report an episode.
 
     POST /episodes/{id}/report
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/episodes/{id_}/report", query=None, body=body, form=None)
+    return call("POST", f"/episodes/{id}/report", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_lists_by_id_like(id_: str, body: dict) -> str:
+def create_lists_by_id_like(id: str, body: dict) -> str:
     """Like a list.
 
     POST /lists/{id}/like
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/lists/{id_}/like", query=None, body=body, form=None)
+    return call("POST", f"/lists/{id}/like", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_lists_by_id_report(id_: str, body: dict) -> str:
+def create_lists_by_id_report(id: str, body: dict) -> str:
     """Report a list.
 
     POST /lists/{id}/report
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/lists/{id_}/report", query=None, body=body, form=None)
+    return call("POST", f"/lists/{id}/report", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_movies_by_id_refresh(id_: str, body: dict, images: bool | None = None) -> str:
+def create_movies_by_id_refresh(id: str, body: dict, images: bool | None = None) -> str:
     """Refresh movie metadata.
 
     POST /movies/{id}/refresh
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         images: Also queue a refresh of the resource images.
     """
-    return call("POST", f"/movies/{id_}/refresh", query={"images": images}, body=body, form=None)
+    return call("POST", f"/movies/{id}/refresh", query={"images": images}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_movies_by_id_refresh_justwatch(id_: str, body: dict) -> str:
+def create_movies_by_id_refresh_justwatch(id: str, body: dict) -> str:
     """Refresh movie JustWatch links.
 
     POST /movies/{id}/refresh/justwatch
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/movies/{id_}/refresh/justwatch", query=None, body=body, form=None)
+    return call("POST", f"/movies/{id}/refresh/justwatch", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_movies_by_id_report(id_: str, body: dict) -> str:
+def create_movies_by_id_report(id: str, body: dict) -> str:
     """Report a movie.
 
     POST /movies/{id}/report
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/movies/{id_}/report", query=None, body=body, form=None)
+    return call("POST", f"/movies/{id}/report", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -227,30 +227,30 @@ def create_oauth_token(body: dict) -> str:
 
 
 @mcp.tool(annotations=_WRITE)
-def create_people_by_id_refresh(id_: str, body: dict, images: bool | None = None) -> str:
+def create_people_by_id_refresh(id: str, body: dict, images: bool | None = None) -> str:
     """Refresh person metadata.
 
     POST /people/{id}/refresh
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         images: Also queue a refresh of the resource images.
     """
-    return call("POST", f"/people/{id_}/refresh", query={"images": images}, body=body, form=None)
+    return call("POST", f"/people/{id}/refresh", query={"images": images}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_people_by_id_report(id_: str, body: dict) -> str:
+def create_people_by_id_report(id: str, body: dict) -> str:
     """Report a person.
 
     POST /people/{id}/report
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/people/{id_}/report", query=None, body=body, form=None)
+    return call("POST", f"/people/{id}/report", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -314,98 +314,98 @@ def create_search_recent_remove(body: dict) -> str:
 
 
 @mcp.tool(annotations=_WRITE)
-def create_seasons_by_id_report(id_: str, body: dict) -> str:
+def create_seasons_by_id_report(id: str, body: dict) -> str:
     """Report a season.
 
     POST /seasons/{id}/report
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/seasons/{id_}/report", query=None, body=body, form=None)
+    return call("POST", f"/seasons/{id}/report", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_shows_by_id_progress_watched_reset(id_: str, body: dict) -> str:
+def create_shows_by_id_progress_watched_reset(id: str, body: dict) -> str:
     """Reset show progress.
 
     POST /shows/{id}/progress/watched/reset
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/shows/{id_}/progress/watched/reset", query=None, body=body, form=None)
+    return call("POST", f"/shows/{id}/progress/watched/reset", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_shows_by_id_refresh(id_: str, body: dict, images: bool | None = None) -> str:
+def create_shows_by_id_refresh(id: str, body: dict, images: bool | None = None) -> str:
     """Refresh show metadata.
 
     POST /shows/{id}/refresh
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         images: Also queue a refresh of the resource images.
     """
-    return call("POST", f"/shows/{id_}/refresh", query={"images": images}, body=body, form=None)
+    return call("POST", f"/shows/{id}/refresh", query={"images": images}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_shows_by_id_refresh_justwatch(id_: str, body: dict) -> str:
+def create_shows_by_id_refresh_justwatch(id: str, body: dict) -> str:
     """Refresh show JustWatch links.
 
     POST /shows/{id}/refresh/justwatch
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/shows/{id_}/refresh/justwatch", query=None, body=body, form=None)
+    return call("POST", f"/shows/{id}/refresh/justwatch", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_shows_by_id_report(id_: str, body: dict) -> str:
+def create_shows_by_id_report(id: str, body: dict) -> str:
     """Report a show.
 
     POST /shows/{id}/report
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/shows/{id_}/report", query=None, body=body, form=None)
+    return call("POST", f"/shows/{id}/report", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_shows_by_id_seasons_by_season_episodes_by_episode_report(id_: str, season: int, episode: int, body: dict) -> str:
+def create_shows_by_id_seasons_by_season_episodes_by_episode_report(id: str, season: int, episode: int, body: dict) -> str:
     """Report an episode.
 
     POST /shows/{id}/seasons/{season}/episodes/{episode}/report
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         episode: Episode number
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/shows/{id_}/seasons/{season}/episodes/{episode}/report", query=None, body=body, form=None)
+    return call("POST", f"/shows/{id}/seasons/{season}/episodes/{episode}/report", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_shows_by_id_seasons_by_season_report(id_: str, season: int, body: dict) -> str:
+def create_shows_by_id_seasons_by_season_report(id: str, season: int, body: dict) -> str:
     """Report a season.
 
     POST /shows/{id}/seasons/{season}/report
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/shows/{id_}/seasons/{season}/report", query=None, body=body, form=None)
+    return call("POST", f"/shows/{id}/seasons/{season}/report", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -553,165 +553,165 @@ def create_sync_watchlist_reorder(body: dict) -> str:
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_by_id_block(id_: str, body: dict) -> str:
+def create_users_by_id_block(id: str, body: dict) -> str:
     """Block this user.
 
     POST /users/{id}/block
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/users/{id_}/block", query=None, body=body, form=None)
+    return call("POST", f"/users/{id}/block", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_by_id_follow(id_: str, body: dict) -> str:
+def create_users_by_id_follow(id: str, body: dict) -> str:
     """Follow this user.
 
     POST /users/{id}/follow
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/users/{id_}/follow", query=None, body=body, form=None)
+    return call("POST", f"/users/{id}/follow", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_by_id_lists(id_: str, body: dict) -> str:
+def create_users_by_id_lists(id: str, body: dict) -> str:
     """Create personal list.
 
     POST /users/{id}/lists
 
     Args:
-        id_: Path parameter.
+        id: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/users/{id_}/lists", query=None, body=body, form=None)
+    return call("POST", f"/users/{id}/lists", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_by_id_lists_by_list_id_items(id_: str, list_id: str, body: dict) -> str:
+def create_users_by_id_lists_by_list_id_items(id: str, list_id: str, body: dict) -> str:
     """Add items to personal list.
 
     POST /users/{id}/lists/{list_id}/items
 
     Args:
-        id_: Path parameter.
+        id: Path parameter.
         list_id: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/users/{id_}/lists/{list_id}/items", query=None, body=body, form=None)
+    return call("POST", f"/users/{id}/lists/{list_id}/items", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_by_id_lists_by_list_id_items_remove(id_: str, list_id: str, body: dict) -> str:
+def create_users_by_id_lists_by_list_id_items_remove(id: str, list_id: str, body: dict) -> str:
     """Remove items from personal list.
 
     POST /users/{id}/lists/{list_id}/items/remove
 
     Args:
-        id_: Path parameter.
+        id: Path parameter.
         list_id: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/users/{id_}/lists/{list_id}/items/remove", query=None, body=body, form=None)
+    return call("POST", f"/users/{id}/lists/{list_id}/items/remove", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_by_id_lists_by_list_id_items_reorder(id_: str, list_id: str, body: dict) -> str:
+def create_users_by_id_lists_by_list_id_items_reorder(id: str, list_id: str, body: dict) -> str:
     """Reorder items on a list.
 
     POST /users/{id}/lists/{list_id}/items/reorder
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/users/{id_}/lists/{list_id}/items/reorder", query=None, body=body, form=None)
+    return call("POST", f"/users/{id}/lists/{list_id}/items/reorder", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_by_id_lists_by_list_id_like(id_: str, list_id: str, body: dict) -> str:
+def create_users_by_id_lists_by_list_id_like(id: str, list_id: str, body: dict) -> str:
     """Like a list.
 
     POST /users/{id}/lists/{list_id}/like
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/users/{id_}/lists/{list_id}/like", query=None, body=body, form=None)
+    return call("POST", f"/users/{id}/lists/{list_id}/like", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_by_id_lists_by_list_id_reorder(id_: str, list_id: str, body: dict) -> str:
+def create_users_by_id_lists_by_list_id_reorder(id: str, list_id: str, body: dict) -> str:
     """Reorder items on a list.
 
     POST /users/{id}/lists/{list_id}/reorder
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/users/{id_}/lists/{list_id}/reorder", query=None, body=body, form=None)
+    return call("POST", f"/users/{id}/lists/{list_id}/reorder", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_by_id_lists_by_list_id_report(id_: str, list_id: str, body: dict) -> str:
+def create_users_by_id_lists_by_list_id_report(id: str, list_id: str, body: dict) -> str:
     """Report a user's list.
 
     POST /users/{id}/lists/{list_id}/report
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/users/{id_}/lists/{list_id}/report", query=None, body=body, form=None)
+    return call("POST", f"/users/{id}/lists/{list_id}/report", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_by_id_lists_reorder(id_: str, body: dict) -> str:
+def create_users_by_id_lists_reorder(id: str, body: dict) -> str:
     """Reorder a user's lists.
 
     POST /users/{id}/lists/reorder
 
     Args:
-        id_: Path parameter.
+        id: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/users/{id_}/lists/reorder", query=None, body=body, form=None)
+    return call("POST", f"/users/{id}/lists/reorder", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_by_id_report(id_: str, body: dict) -> str:
+def create_users_by_id_report(id: str, body: dict) -> str:
     """Report a user.
 
     POST /users/{id}/report
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/users/{id_}/report", query=None, body=body, form=None)
+    return call("POST", f"/users/{id}/report", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_by_id_smart_lists(id_: str, body: dict) -> str:
+def create_users_by_id_smart_lists(id: str, body: dict) -> str:
     """Create smart list.
 
     POST /users/{id}/smart-lists
 
     Args:
-        id_: Path parameter.
+        id: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/users/{id_}/smart-lists", query=None, body=body, form=None)
+    return call("POST", f"/users/{id}/smart-lists", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -765,17 +765,17 @@ def create_users_hidden_progress_watched_remove(body: dict) -> str:
 
 
 @mcp.tool(annotations=_WRITE)
-def create_users_requests_by_id(id_: str, body: dict, extended: str | None = None) -> str:
+def create_users_requests_by_id(id: str, body: dict, extended: str | None = None) -> str:
     """Approve follow request.
 
     POST /users/requests/{id}
 
     Args:
-        id_: Path parameter.
+        id: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         extended: Extended information to include in the response.
     """
-    return call("POST", f"/users/requests/{id_}", query={"extended": extended}, body=body, form=None)
+    return call("POST", f"/users/requests/{id}", query={"extended": extended}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -863,199 +863,199 @@ def delete_checkin() -> str:
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_comments_by_id(id_: str) -> str:
+def delete_comments_by_id(id: str) -> str:
     """Delete a comment or reply.
 
     DELETE /comments/{id}/
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("DELETE", f"/comments/{id_}/", query=None, body=None, form=None)
+    return call("DELETE", f"/comments/{id}/", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_comments_by_id_like(id_: str) -> str:
+def delete_comments_by_id_like(id: str) -> str:
     """Remove like on a comment.
 
     DELETE /comments/{id}/like
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("DELETE", f"/comments/{id_}/like", query=None, body=None, form=None)
+    return call("DELETE", f"/comments/{id}/like", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_comments_by_id_reactions_by_reaction_type(id_: str, reaction_type: str) -> str:
+def delete_comments_by_id_reactions_by_reaction_type(id: str, reaction_type: str) -> str:
     """Remove comment reaction.
 
     DELETE /comments/{id}/reactions/{reaction_type}
 
     Args:
-        id_: Path parameter.
+        id: Path parameter.
         reaction_type: Path parameter.
     """
-    return call("DELETE", f"/comments/{id_}/reactions/{reaction_type}", query=None, body=None, form=None)
+    return call("DELETE", f"/comments/{id}/reactions/{reaction_type}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_lists_by_id_like(id_: str) -> str:
+def delete_lists_by_id_like(id: str) -> str:
     """Remove like on a list.
 
     DELETE /lists/{id}/like
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("DELETE", f"/lists/{id_}/like", query=None, body=None, form=None)
+    return call("DELETE", f"/lists/{id}/like", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_notes_by_id(id_: str) -> str:
+def delete_notes_by_id(id: str) -> str:
     """Delete a note.
 
     DELETE /notes/{id}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("DELETE", f"/notes/{id_}", query=None, body=None, form=None)
+    return call("DELETE", f"/notes/{id}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_recommendations_movies_by_id(id_: str) -> str:
+def delete_recommendations_movies_by_id(id: str) -> str:
     """Hide a movie recommendation.
 
     DELETE /recommendations/movies/{id}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("DELETE", f"/recommendations/movies/{id_}", query=None, body=None, form=None)
+    return call("DELETE", f"/recommendations/movies/{id}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_recommendations_shows_by_id(id_: str) -> str:
+def delete_recommendations_shows_by_id(id: str) -> str:
     """Hide a show recommendation.
 
     DELETE /recommendations/shows/{id}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("DELETE", f"/recommendations/shows/{id_}", query=None, body=None, form=None)
+    return call("DELETE", f"/recommendations/shows/{id}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_shows_by_id_progress_watched_reset(id_: str) -> str:
+def delete_shows_by_id_progress_watched_reset(id: str) -> str:
     """Undo reset show progress.
 
     DELETE /shows/{id}/progress/watched/reset
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("DELETE", f"/shows/{id_}/progress/watched/reset", query=None, body=None, form=None)
+    return call("DELETE", f"/shows/{id}/progress/watched/reset", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_sync_playback_by_id(id_: int) -> str:
+def delete_sync_playback_by_id(id: int) -> str:
     """Remove a playback item.
 
     DELETE /sync/playback/{id}
 
     Args:
-        id_: ID of the playback entry
+        id: ID of the playback entry
     """
-    return call("DELETE", f"/sync/playback/{id_}", query=None, body=None, form=None)
+    return call("DELETE", f"/sync/playback/{id}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_users_by_id_block(id_: str) -> str:
+def delete_users_by_id_block(id: str) -> str:
     """Unblock this user.
 
     DELETE /users/{id}/block
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
     """
-    return call("DELETE", f"/users/{id_}/block", query=None, body=None, form=None)
+    return call("DELETE", f"/users/{id}/block", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_users_by_id_follow(id_: str) -> str:
+def delete_users_by_id_follow(id: str) -> str:
     """Unfollow this user.
 
     DELETE /users/{id}/follow
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
     """
-    return call("DELETE", f"/users/{id_}/follow", query=None, body=None, form=None)
+    return call("DELETE", f"/users/{id}/follow", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_users_by_id_lists_by_list_id(id_: str, list_id: str) -> str:
+def delete_users_by_id_lists_by_list_id(id: str, list_id: str) -> str:
     """Delete a user's personal list.
 
     DELETE /users/{id}/lists/{list_id}/
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
     """
-    return call("DELETE", f"/users/{id_}/lists/{list_id}/", query=None, body=None, form=None)
+    return call("DELETE", f"/users/{id}/lists/{list_id}/", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_users_by_id_lists_by_list_id_like(id_: str, list_id: str) -> str:
+def delete_users_by_id_lists_by_list_id_like(id: str, list_id: str) -> str:
     """Remove like on a list.
 
     DELETE /users/{id}/lists/{list_id}/like
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
     """
-    return call("DELETE", f"/users/{id_}/lists/{list_id}/like", query=None, body=None, form=None)
+    return call("DELETE", f"/users/{id}/lists/{list_id}/like", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_users_by_id_smart_lists_by_list_id(id_: str, list_id: str) -> str:
+def delete_users_by_id_smart_lists_by_list_id(id: str, list_id: str) -> str:
     """Delete a user's smart list.
 
     DELETE /users/{id}/smart-lists/{list_id}/
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
     """
-    return call("DELETE", f"/users/{id_}/smart-lists/{list_id}/", query=None, body=None, form=None)
+    return call("DELETE", f"/users/{id}/smart-lists/{list_id}/", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_users_requests_by_id(id_: str) -> str:
+def delete_users_requests_by_id(id: str) -> str:
     """Deny follow request.
 
     DELETE /users/requests/{id}
 
     Args:
-        id_: Path parameter.
+        id: Path parameter.
     """
-    return call("DELETE", f"/users/requests/{id_}", query=None, body=None, form=None)
+    return call("DELETE", f"/users/requests/{id}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_users_saved_filters_by_id(id_: int) -> str:
+def delete_users_saved_filters_by_id(id: int) -> str:
     """Delete saved filter.
 
     DELETE /users/saved_filters/{id}
 
     Args:
-        id_: ID of the saved filter
+        id: ID of the saved filter
     """
-    return call("DELETE", f"/users/saved_filters/{id_}", query=None, body=None, form=None)
+    return call("DELETE", f"/users/saved_filters/{id}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -1068,15 +1068,15 @@ def delete_users_settings_plex_connect() -> str:
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
-def delete_users_syncs_by_id(id_: int) -> str:
+def delete_users_syncs_by_id(id: int) -> str:
     """Undo a data sync.
 
     DELETE /users/syncs/{id}
 
     Args:
-        id_: The numeric sync id, scoped to the authenticated user. A numeric segment hits a single sync; a non-numeric segment is the filtered list.
+        id: The numeric sync id, scoped to the authenticated user. A numeric segment hits a single sync; a non-numeric segment is the filtered list.
     """
-    return call("DELETE", f"/users/syncs/{id_}", query=None, body=None, form=None)
+    return call("DELETE", f"/users/syncs/{id}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -1127,7 +1127,7 @@ def get_calendars_by_target_dvd_by_start_date_by_days(target: str, start_date: s
 
 
 @mcp.tool(annotations=_READ)
-def get_calendars_by_target_media_by_start_date_by_days(target: str, start_date: str, days: int, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date_query: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, type_: str | None = None, group: str | None = None) -> str:
+def get_calendars_by_target_media_by_start_date_by_days(target: str, start_date: str, days: int, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date_query: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, type: str | None = None, group: str | None = None) -> str:
     """Get media.
 
     GET /calendars/{target}/media/{start_date}/{days}
@@ -1154,10 +1154,10 @@ def get_calendars_by_target_media_by_start_date_by_days(target: str, start_date:
         runtimes: Query parameter.
         countries: Query parameter.
         certifications: Query parameter.
-        type_: Narrow the feed to a single media type. Omit to return both.
+        type: Narrow the feed to a single media type. Omit to return both.
         group: Collapse same-show-same-day episodes into a single card (`full_season` / `multiple_episodes`). Omit for one entry per episode.
     """
-    return call("GET", f"/calendars/{target}/media/{start_date}/{days}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date_query, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "type": type_, "group": group}, body=None, form=None)
+    return call("GET", f"/calendars/{target}/media/{start_date}/{days}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date_query, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "type": type, "group": group}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1372,7 +1372,7 @@ def get_calendars_by_target_streaming_by_start_date_by_days(target: str, start_d
 
 
 @mcp.tool(annotations=_READ)
-def get_calendars_releases_hot_by_start_date_by_days(start_date: str, days: int, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date_query: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, type_: str | None = None, group: str | None = None) -> str:
+def get_calendars_releases_hot_by_start_date_by_days(start_date: str, days: int, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date_query: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, type: str | None = None, group: str | None = None) -> str:
     """Get hot releases.
 
     GET /calendars/releases/hot/{start_date}/{days}
@@ -1397,10 +1397,10 @@ def get_calendars_releases_hot_by_start_date_by_days(start_date: str, days: int,
         runtimes: Query parameter.
         countries: Query parameter.
         certifications: Query parameter.
-        type_: Narrow the feed to a single media type. Omit to return both.
+        type: Narrow the feed to a single media type. Omit to return both.
         group: Collapse same-show-same-day episodes into a single card (`full_season` / `multiple_episodes`). Omit for one entry per episode.
     """
-    return call("GET", f"/calendars/releases/hot/{start_date}/{days}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date_query, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "type": type_, "group": group}, body=None, form=None)
+    return call("GET", f"/calendars/releases/hot/{start_date}/{days}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date_query, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "type": type, "group": group}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1494,209 +1494,209 @@ def get_calendars_releases_hot_premieres_by_start_date_by_days(start_date: str, 
 
 
 @mcp.tool(annotations=_READ)
-def get_certifications_by_type(type_: str) -> str:
+def get_certifications_by_type(type: str) -> str:
     """Get certifications.
 
     GET /certifications/{type}
 
     Args:
-        type_: Certification media type.
+        type: Certification media type.
     """
-    return call("GET", f"/certifications/{type_}", query=None, body=None, form=None)
+    return call("GET", f"/certifications/{type}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_comments_by_id(id_: str) -> str:
+def get_comments_by_id(id: str) -> str:
     """Get a comment or reply.
 
     GET /comments/{id}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/comments/{id_}", query=None, body=None, form=None)
+    return call("GET", f"/comments/{id}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_comments_by_id_item(id_: str, extended: str | None = None) -> str:
+def get_comments_by_id_item(id: str, extended: str | None = None) -> str:
     """Get the attached media item.
 
     GET /comments/{id}/item
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/comments/{id_}/item", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/comments/{id}/item", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_comments_by_id_likes(id_: str, page: int | None = None, limit: int | None = None) -> str:
+def get_comments_by_id_likes(id: str, page: int | None = None, limit: int | None = None) -> str:
     """Get all users who liked a comment.
 
     GET /comments/{id}/likes
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/comments/{id_}/likes", query={"page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/comments/{id}/likes", query={"page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_comments_by_id_reactions(id_: str, extended: str | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_comments_by_id_reactions(id: str, extended: str | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get comment reactions.
 
     GET /comments/{id}/reactions/
 
     Args:
-        id_: Path parameter.
+        id: Path parameter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/comments/{id_}/reactions/", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/comments/{id}/reactions/", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_comments_by_id_reactions_summary(id_: str) -> str:
+def get_comments_by_id_reactions_summary(id: str) -> str:
     """Get reaction summary.
 
     GET /comments/{id}/reactions/summary
 
     Args:
-        id_: Path parameter.
+        id: Path parameter.
     """
-    return call("GET", f"/comments/{id_}/reactions/summary", query=None, body=None, form=None)
+    return call("GET", f"/comments/{id}/reactions/summary", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_comments_by_id_replies(id_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_comments_by_id_replies(id: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get replies for a comment.
 
     GET /comments/{id}/replies
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/comments/{id_}/replies", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/comments/{id}/replies", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_comments_recent_by_comment_type_by_type(comment_type: str, type_: str, extended: str | None = None, page: int | None = None, limit: str | None = None, include_replies: bool | None = None) -> str:
+def get_comments_recent_by_comment_type_by_type(comment_type: str, type: str, extended: str | None = None, page: int | None = None, limit: str | None = None, include_replies: bool | None = None) -> str:
     """Get recently created comments.
 
     GET /comments/recent/{comment_type}/{type}
 
     Args:
         comment_type: Comment type filter.
-        type_: Media type filter.
+        type: Media type filter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
         include_replies: Include replies inline alongside top level comments.
     """
-    return call("GET", f"/comments/recent/{comment_type}/{type_}", query={"extended": extended, "page": page, "limit": limit, "include_replies": include_replies}, body=None, form=None)
+    return call("GET", f"/comments/recent/{comment_type}/{type}", query={"extended": extended, "page": page, "limit": limit, "include_replies": include_replies}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_comments_trending_by_comment_type_by_type(comment_type: str, type_: str, extended: str | None = None, page: int | None = None, limit: str | None = None, include_replies: bool | None = None) -> str:
+def get_comments_trending_by_comment_type_by_type(comment_type: str, type: str, extended: str | None = None, page: int | None = None, limit: str | None = None, include_replies: bool | None = None) -> str:
     """Get trending comments.
 
     GET /comments/trending/{comment_type}/{type}
 
     Args:
         comment_type: Comment type filter.
-        type_: Media type filter.
+        type: Media type filter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
         include_replies: Include replies inline alongside top level comments.
     """
-    return call("GET", f"/comments/trending/{comment_type}/{type_}", query={"extended": extended, "page": page, "limit": limit, "include_replies": include_replies}, body=None, form=None)
+    return call("GET", f"/comments/trending/{comment_type}/{type}", query={"extended": extended, "page": page, "limit": limit, "include_replies": include_replies}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_comments_updates_by_comment_type_by_type(comment_type: str, type_: str, extended: str | None = None, page: int | None = None, limit: str | None = None, include_replies: bool | None = None) -> str:
+def get_comments_updates_by_comment_type_by_type(comment_type: str, type: str, extended: str | None = None, page: int | None = None, limit: str | None = None, include_replies: bool | None = None) -> str:
     """Get recently updated comments.
 
     GET /comments/updates/{comment_type}/{type}
 
     Args:
         comment_type: Comment type filter.
-        type_: Media type filter.
+        type: Media type filter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
         include_replies: Include replies inline alongside top level comments.
     """
-    return call("GET", f"/comments/updates/{comment_type}/{type_}", query={"extended": extended, "page": page, "limit": limit, "include_replies": include_replies}, body=None, form=None)
+    return call("GET", f"/comments/updates/{comment_type}/{type}", query={"extended": extended, "page": page, "limit": limit, "include_replies": include_replies}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_countries_by_type(type_: str) -> str:
+def get_countries_by_type(type: str) -> str:
     """Get countries.
 
     GET /countries/{type}
 
     Args:
-        type_: Media type to return countries for.
+        type: Media type to return countries for.
     """
-    return call("GET", f"/countries/{type_}", query=None, body=None, form=None)
+    return call("GET", f"/countries/{type}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_episodes_by_id_watchnow_by_country(id_: str, country: str, links: str | None = None, extended: str | None = None) -> str:
+def get_episodes_by_id_watchnow_by_country(id: str, country: str, links: str | None = None, extended: str | None = None) -> str:
     """Get episode watch now sources.
 
     GET /episodes/{id}/watchnow/{country}
 
     Args:
-        id_: The Trakt ID of the resource to get the watch now sources of.
+        id: The Trakt ID of the resource to get the watch now sources of.
         country: 2 character country code.
         links: Query parameter.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/episodes/{id_}/watchnow/{country}", query={"links": links, "extended": extended}, body=None, form=None)
+    return call("GET", f"/episodes/{id}/watchnow/{country}", query={"links": links, "extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_genres_by_type(type_: str, extended: str | None = None) -> str:
+def get_genres_by_type(type: str, extended: str | None = None) -> str:
     """Get genres.
 
     GET /genres/{type}
 
     Args:
-        type_: Media type to return genres for.
+        type: Media type to return genres for.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/genres/{type_}", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/genres/{type}", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_languages_by_type(type_: str) -> str:
+def get_languages_by_type(type: str) -> str:
     """Get languages.
 
     GET /languages/{type}
 
     Args:
-        type_: Media type to return languages for.
+        type: Media type to return languages for.
     """
-    return call("GET", f"/languages/{type_}", query=None, body=None, form=None)
+    return call("GET", f"/languages/{type}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_lists_by_id(id_: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None) -> str:
+def get_lists_by_id(id: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None) -> str:
     """Get list.
 
     GET /lists/{id}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
         watchnow: Use "favorites" for streaming on a favorite service of the user.
       Use "any" for streaming on any service in the user's country.
@@ -1718,34 +1718,34 @@ def get_lists_by_id(id_: str, extended: str | None = None, watchnow: str | None 
         ignore_collected: Ignore collected items.
         ignore_watchlisted: Ignore watchlisted items.
     """
-    return call("GET", f"/lists/{id_}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted}, body=None, form=None)
+    return call("GET", f"/lists/{id}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_lists_by_id_comments_by_sort(id_: str, sort: str, extended: str | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_lists_by_id_comments_by_sort(id: str, sort: str, extended: str | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get all list comments.
 
     GET /lists/{id}/comments/{sort}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         sort: Comment sort option.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/lists/{id_}/comments/{sort}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/lists/{id}/comments/{sort}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_lists_by_id_items_by_type_by_sort_by_by_sort_how(id_: str, type_: str, sort_by: str, sort_how: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_lists_by_id_items_by_type_by_sort_by_by_sort_how(id: str, type: str, sort_by: str, sort_how: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get items on a list.
 
     GET /lists/{id}/items/{type}/{sort_by}/{sort_how}
 
     Args:
-        id_: The id/slug of the resource.
-        type_: List item type filter.
+        id: The id/slug of the resource.
+        type: List item type filter.
         sort_by: Sort by a specific property.
         sort_how: Sort direction.
         extended: Extended information to include in the response.
@@ -1771,17 +1771,17 @@ def get_lists_by_id_items_by_type_by_sort_by_by_sort_how(id_: str, type_: str, s
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/lists/{id_}/items/{type_}/{sort_by}/{sort_how}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/lists/{id}/items/{type}/{sort_by}/{sort_how}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_lists_by_id_items_movie(id_: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_lists_by_id_items_movie(id: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get movie list items.
 
     GET /lists/{id}/items/movie
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
         sort_how: The direction to sort in
@@ -1807,17 +1807,17 @@ def get_lists_by_id_items_movie(id_: str, extended: str | None = None, sort_by: 
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/lists/{id_}/items/movie", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/lists/{id}/items/movie", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_lists_by_id_items_movie_show(id_: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_lists_by_id_items_movie_show(id: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get media list items.
 
     GET /lists/{id}/items/movie,show
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
         sort_how: The direction to sort in
@@ -1843,17 +1843,17 @@ def get_lists_by_id_items_movie_show(id_: str, extended: str | None = None, sort
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/lists/{id_}/items/movie,show", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/lists/{id}/items/movie,show", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_lists_by_id_items_movie_show_episode_season(id_: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_lists_by_id_items_movie_show_episode_season(id: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get all list items.
 
     GET /lists/{id}/items/movie,show,episode,season
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
         sort_how: The direction to sort in
@@ -1879,17 +1879,17 @@ def get_lists_by_id_items_movie_show_episode_season(id_: str, extended: str | No
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/lists/{id_}/items/movie,show,episode,season", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/lists/{id}/items/movie,show,episode,season", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_lists_by_id_items_show(id_: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_lists_by_id_items_show(id: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get show list items.
 
     GET /lists/{id}/items/show
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
         sort_how: The direction to sort in
@@ -1915,32 +1915,32 @@ def get_lists_by_id_items_show(id_: str, extended: str | None = None, sort_by: s
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/lists/{id_}/items/show", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/lists/{id}/items/show", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_lists_by_id_likes(id_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_lists_by_id_likes(id: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get all users who liked a list.
 
     GET /lists/{id}/likes
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/lists/{id_}/likes", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/lists/{id}/likes", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_lists_popular_by_type(type_: str, extended: str | None = None, page: int | None = None, limit: int | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None) -> str:
+def get_lists_popular_by_type(type: str, extended: str | None = None, page: int | None = None, limit: int | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None) -> str:
     """Get popular lists.
 
     GET /lists/popular/{type}
 
     Args:
-        type_: List type filter.
+        type: List type filter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
@@ -1961,17 +1961,17 @@ def get_lists_popular_by_type(type_: str, extended: str | None = None, page: int
         countries: Query parameter.
         certifications: Query parameter.
     """
-    return call("GET", f"/lists/popular/{type_}", query={"extended": extended, "page": page, "limit": limit, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications}, body=None, form=None)
+    return call("GET", f"/lists/popular/{type}", query={"extended": extended, "page": page, "limit": limit, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_lists_trending_by_type(type_: str, extended: str | None = None, page: int | None = None, limit: int | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None) -> str:
+def get_lists_trending_by_type(type: str, extended: str | None = None, page: int | None = None, limit: int | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None) -> str:
     """Get trending lists.
 
     GET /lists/trending/{type}
 
     Args:
-        type_: List type filter.
+        type: List type filter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
@@ -1992,222 +1992,222 @@ def get_lists_trending_by_type(type_: str, extended: str | None = None, page: in
         countries: Query parameter.
         certifications: Query parameter.
     """
-    return call("GET", f"/lists/trending/{type_}", query={"extended": extended, "page": page, "limit": limit, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications}, body=None, form=None)
+    return call("GET", f"/lists/trending/{type}", query={"extended": extended, "page": page, "limit": limit, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id(id_: str, extended: str | None = None) -> str:
+def get_movies_by_id(id: str, extended: str | None = None) -> str:
     """Get a movie.
 
     GET /movies/{id}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/movies/{id_}", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/movies/{id}", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_aliases(id_: str) -> str:
+def get_movies_by_id_aliases(id: str) -> str:
     """Get all movie aliases.
 
     GET /movies/{id}/aliases
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/movies/{id_}/aliases", query=None, body=None, form=None)
+    return call("GET", f"/movies/{id}/aliases", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_comments_by_sort(id_: str, sort: str, extended: str | None = None, page: int | None = None, limit: str | None = None, language: str | None = None) -> str:
+def get_movies_by_id_comments_by_sort(id: str, sort: str, extended: str | None = None, page: int | None = None, limit: str | None = None, language: str | None = None) -> str:
     """Get all movie comments.
 
     GET /movies/{id}/comments/{sort}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         sort: Path parameter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
         language: Filter comments to a 2 character language code
     """
-    return call("GET", f"/movies/{id_}/comments/{sort}", query={"extended": extended, "page": page, "limit": limit, "language": language}, body=None, form=None)
+    return call("GET", f"/movies/{id}/comments/{sort}", query={"extended": extended, "page": page, "limit": limit, "language": language}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_lists_by_type_by_sort(id_: str, sort: str, type_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_movies_by_id_lists_by_type_by_sort(id: str, sort: str, type: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get lists containing this movie.
 
     GET /movies/{id}/lists/{type}/{sort}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         sort: Path parameter.
-        type_: Path parameter.
+        type: Path parameter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/movies/{id_}/lists/{type_}/{sort}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/movies/{id}/lists/{type}/{sort}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_people(id_: str, extended: str | None = None) -> str:
+def get_movies_by_id_people(id: str, extended: str | None = None) -> str:
     """Get all people for a movie.
 
     GET /movies/{id}/people
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/movies/{id_}/people", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/movies/{id}/people", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_ratings(id_: str, extended: str | None = None) -> str:
+def get_movies_by_id_ratings(id: str, extended: str | None = None) -> str:
     """Get movie ratings.
 
     GET /movies/{id}/ratings
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Use `all` to include ratings from supported external sources.
     """
-    return call("GET", f"/movies/{id_}/ratings", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/movies/{id}/ratings", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_related(id_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_movies_by_id_related(id: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get related movies.
 
     GET /movies/{id}/related
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/movies/{id_}/related", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/movies/{id}/related", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_releases_by_country(id_: str, country: str) -> str:
+def get_movies_by_id_releases_by_country(id: str, country: str) -> str:
     """Get all movie releases.
 
     GET /movies/{id}/releases/{country}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         country: 2 character country code.
     """
-    return call("GET", f"/movies/{id_}/releases/{country}", query=None, body=None, form=None)
+    return call("GET", f"/movies/{id}/releases/{country}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_sentiments(id_: str) -> str:
+def get_movies_by_id_sentiments(id: str) -> str:
     """Get movie sentiments.
 
     GET /movies/{id}/sentiments
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/movies/{id_}/sentiments", query=None, body=None, form=None)
+    return call("GET", f"/movies/{id}/sentiments", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_stats(id_: str) -> str:
+def get_movies_by_id_stats(id: str) -> str:
     """Get movie stats.
 
     GET /movies/{id}/stats
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/movies/{id_}/stats", query=None, body=None, form=None)
+    return call("GET", f"/movies/{id}/stats", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_studios(id_: str) -> str:
+def get_movies_by_id_studios(id: str) -> str:
     """Get movie studios.
 
     GET /movies/{id}/studios
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/movies/{id_}/studios", query=None, body=None, form=None)
+    return call("GET", f"/movies/{id}/studios", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_translations(id_: str, language: str | None = None) -> str:
+def get_movies_by_id_translations(id: str, language: str | None = None) -> str:
     """Get all movie translations.
 
     GET /movies/{id}/translations
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         language: Filter translations to a 2 character language code
     """
-    return call("GET", f"/movies/{id_}/translations", query={"language": language}, body=None, form=None)
+    return call("GET", f"/movies/{id}/translations", query={"language": language}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_videos(id_: str) -> str:
+def get_movies_by_id_videos(id: str) -> str:
     """Get all videos.
 
     GET /movies/{id}/videos
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/movies/{id_}/videos", query=None, body=None, form=None)
+    return call("GET", f"/movies/{id}/videos", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_watching(id_: str, extended: str | None = None) -> str:
+def get_movies_by_id_watching(id: str, extended: str | None = None) -> str:
     """Get users watching right now.
 
     GET /movies/{id}/watching
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/movies/{id_}/watching", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/movies/{id}/watching", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_watchnow_by_country(id_: str, country: str, links: str | None = None, extended: str | None = None) -> str:
+def get_movies_by_id_watchnow_by_country(id: str, country: str, links: str | None = None, extended: str | None = None) -> str:
     """Get movie watch now sources.
 
     GET /movies/{id}/watchnow/{country}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         country: 2 character country code.
         links: Query parameter.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/movies/{id_}/watchnow/{country}", query={"links": links, "extended": extended}, body=None, form=None)
+    return call("GET", f"/movies/{id}/watchnow/{country}", query={"links": links, "extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_movies_by_id_watchnow_justwatch_links_by_country(country: str, id_: str) -> str:
+def get_movies_by_id_watchnow_justwatch_links_by_country(country: str, id: str) -> str:
     """Get movie JustWatch links.
 
     GET /movies/{id}/watchnow/justwatch_links/{country}
 
     Args:
         country: Path parameter.
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/movies/{id_}/watchnow/justwatch_links/{country}", query=None, body=None, form=None)
+    return call("GET", f"/movies/{id}/watchnow/justwatch_links/{country}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -2346,83 +2346,83 @@ def get_movies_watched_by_period(period: str, extended: str | None = None, page:
 
 
 @mcp.tool(annotations=_READ)
-def get_notes_by_id(id_: str) -> str:
+def get_notes_by_id(id: str) -> str:
     """Get a note.
 
     GET /notes/{id}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/notes/{id_}", query=None, body=None, form=None)
+    return call("GET", f"/notes/{id}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_notes_by_id_item(id_: str) -> str:
+def get_notes_by_id_item(id: str) -> str:
     """Get the attached item.
 
     GET /notes/{id}/item
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/notes/{id_}/item", query=None, body=None, form=None)
+    return call("GET", f"/notes/{id}/item", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_people_by_id(id_: str, extended: str | None = None) -> str:
+def get_people_by_id(id: str, extended: str | None = None) -> str:
     """Get a single person.
 
     GET /people/{id}/
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/people/{id_}/", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/people/{id}/", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_people_by_id_lists_by_type_by_sort(id_: str, sort: str, type_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_people_by_id_lists_by_type_by_sort(id: str, sort: str, type: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get lists containing this person.
 
     GET /people/{id}/lists/{type}/{sort}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         sort: Path parameter.
-        type_: Path parameter.
+        type: Path parameter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/people/{id_}/lists/{type_}/{sort}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/people/{id}/lists/{type}/{sort}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_people_by_id_movies(id_: str, extended: str | None = None) -> str:
+def get_people_by_id_movies(id: str, extended: str | None = None) -> str:
     """Get movie credits.
 
     GET /people/{id}/movies
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/people/{id_}/movies", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/people/{id}/movies", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_people_by_id_shows(id_: str, extended: str | None = None) -> str:
+def get_people_by_id_shows(id: str, extended: str | None = None) -> str:
     """Get show credits.
 
     GET /people/{id}/shows
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/people/{id_}/shows", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/people/{id}/shows", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -2455,277 +2455,277 @@ def get_people_updates_id_by_start_date(start_date: str, page: int | None = None
 
 
 @mcp.tool(annotations=_READ)
-def get_search_by_id_type_by_id(id_type: str, id_: str, type_: str | None = None, page: int | None = None, limit: int | None = None, extended: str | None = None) -> str:
+def get_search_by_id_type_by_id(id_type: str, id: str, type: str | None = None, page: int | None = None, limit: int | None = None, extended: str | None = None) -> str:
     """Get ID lookup results.
 
     GET /search/{id_type}/{id}
 
     Args:
         id_type: External ID type to look up.
-        id_: External ID value.
-        type_: Optional media type filter.
+        id: External ID value.
+        type: Optional media type filter.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/search/{id_type}/{id_}", query={"type": type_, "page": page, "limit": limit, "extended": extended}, body=None, form=None)
+    return call("GET", f"/search/{id_type}/{id}", query={"type": type, "page": page, "limit": limit, "extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_search_by_type(type_: str, query: str | None = None, page: int | None = None, limit: int | None = None, extended: str | None = None) -> str:
+def get_search_by_type(type: str, query: str | None = None, page: int | None = None, limit: int | None = None, extended: str | None = None) -> str:
     """Get text query results.
 
     GET /search/{type}
 
     Args:
-        type_: Specify the type of results by sending a single value or a comma delimited string for multiple types.
+        type: Specify the type of results by sending a single value or a comma delimited string for multiple types.
         query: The search query to search all text based fields.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/search/{type_}", query={"query": query, "page": page, "limit": limit, "extended": extended}, body=None, form=None)
+    return call("GET", f"/search/{type}", query={"query": query, "page": page, "limit": limit, "extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_search_by_type_exact(type_: str, query: str | None = None, page: int | None = None, limit: int | None = None, extended: str | None = None) -> str:
+def get_search_by_type_exact(type: str, query: str | None = None, page: int | None = None, limit: int | None = None, extended: str | None = None) -> str:
     """Get exact text query results.
 
     GET /search/{type}/exact
 
     Args:
-        type_: Specify the type of results by sending a single value or a comma delimited string for multiple types.
+        type: Specify the type of results by sending a single value or a comma delimited string for multiple types.
         query: The search query to search all text based fields.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/search/{type_}/exact", query={"query": query, "page": page, "limit": limit, "extended": extended}, body=None, form=None)
+    return call("GET", f"/search/{type}/exact", query={"query": query, "page": page, "limit": limit, "extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_search_recent_by_id_global_by_type(type_: str, page: int | None = None, limit: int | None = None, query: str | None = None, extended: str | None = None) -> str:
+def get_search_recent_by_id_global_by_type(type: str, page: int | None = None, limit: int | None = None, query: str | None = None, extended: str | None = None) -> str:
     """Get trending search results.
 
     GET /search/recent_by_id/global/{type}
 
     Args:
-        type_: Specify the type of results by sending a single value or a comma delimited string for multiple types.
+        type: Specify the type of results by sending a single value or a comma delimited string for multiple types.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
         query: The search query to search all text based fields.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/search/recent_by_id/global/{type_}", query={"page": page, "limit": limit, "query": query, "extended": extended}, body=None, form=None)
+    return call("GET", f"/search/recent_by_id/global/{type}", query={"page": page, "limit": limit, "query": query, "extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id(id_: str, extended: str | None = None) -> str:
+def get_shows_by_id(id: str, extended: str | None = None) -> str:
     """Get a single show.
 
     GET /shows/{id}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_aliases(id_: str) -> str:
+def get_shows_by_id_aliases(id: str) -> str:
     """Get all show aliases.
 
     GET /shows/{id}/aliases
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/shows/{id_}/aliases", query=None, body=None, form=None)
+    return call("GET", f"/shows/{id}/aliases", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_certifications(id_: str) -> str:
+def get_shows_by_id_certifications(id: str) -> str:
     """Get all show certifications.
 
     GET /shows/{id}/certifications
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/shows/{id_}/certifications", query=None, body=None, form=None)
+    return call("GET", f"/shows/{id}/certifications", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_comments_by_sort(id_: str, sort: str, extended: str | None = None, page: int | None = None, limit: str | None = None, language: str | None = None) -> str:
+def get_shows_by_id_comments_by_sort(id: str, sort: str, extended: str | None = None, page: int | None = None, limit: str | None = None, language: str | None = None) -> str:
     """Get all show comments.
 
     GET /shows/{id}/comments/{sort}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         sort: Path parameter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
         language: Filter comments to a 2 character language code
     """
-    return call("GET", f"/shows/{id_}/comments/{sort}", query={"extended": extended, "page": page, "limit": limit, "language": language}, body=None, form=None)
+    return call("GET", f"/shows/{id}/comments/{sort}", query={"extended": extended, "page": page, "limit": limit, "language": language}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_last_episode(id_: str, extended: str | None = None) -> str:
+def get_shows_by_id_last_episode(id: str, extended: str | None = None) -> str:
     """Get last episode.
 
     GET /shows/{id}/last_episode
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/last_episode", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/last_episode", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_lists_by_type_by_sort(id_: str, sort: str, type_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_shows_by_id_lists_by_type_by_sort(id: str, sort: str, type: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get lists containing this show.
 
     GET /shows/{id}/lists/{type}/{sort}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         sort: Path parameter.
-        type_: Path parameter.
+        type: Path parameter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/shows/{id_}/lists/{type_}/{sort}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/shows/{id}/lists/{type}/{sort}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_next_episode(id_: str, extended: str | None = None) -> str:
+def get_shows_by_id_next_episode(id: str, extended: str | None = None) -> str:
     """Get next episode.
 
     GET /shows/{id}/next_episode
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/next_episode", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/next_episode", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_people(id_: str, extended: str | None = None) -> str:
+def get_shows_by_id_people(id: str, extended: str | None = None) -> str:
     """Get all people for a show.
 
     GET /shows/{id}/people
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/people", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/people", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_progress_collection(id_: str, extended: str | None = None, hidden: bool | None = None, specials: bool | None = None, count_specials: bool | None = None, include_stats: bool | None = None) -> str:
+def get_shows_by_id_progress_collection(id: str, extended: str | None = None, hidden: bool | None = None, specials: bool | None = None, count_specials: bool | None = None, include_stats: bool | None = None) -> str:
     """Get show collection progress.
 
     GET /shows/{id}/progress/collection
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
         hidden: Whether to include any hidden seasons
         specials: Whether to include special seasons as season 0.
         count_specials: Whether to count specials in the overall stats (only applies if specials are included).
         include_stats: Whether to include stats in the response
     """
-    return call("GET", f"/shows/{id_}/progress/collection", query={"extended": extended, "hidden": hidden, "specials": specials, "count_specials": count_specials, "include_stats": include_stats}, body=None, form=None)
+    return call("GET", f"/shows/{id}/progress/collection", query={"extended": extended, "hidden": hidden, "specials": specials, "count_specials": count_specials, "include_stats": include_stats}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_progress_watched(id_: str, extended: str | None = None, hidden: bool | None = None, specials: bool | None = None, count_specials: bool | None = None, include_stats: bool | None = None) -> str:
+def get_shows_by_id_progress_watched(id: str, extended: str | None = None, hidden: bool | None = None, specials: bool | None = None, count_specials: bool | None = None, include_stats: bool | None = None) -> str:
     """Get show watched progress.
 
     GET /shows/{id}/progress/watched
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
         hidden: Whether to include any hidden seasons
         specials: Whether to include special seasons as season 0.
         count_specials: Whether to count specials in the overall stats (only applies if specials are included).
         include_stats: Whether to include stats in the response
     """
-    return call("GET", f"/shows/{id_}/progress/watched", query={"extended": extended, "hidden": hidden, "specials": specials, "count_specials": count_specials, "include_stats": include_stats}, body=None, form=None)
+    return call("GET", f"/shows/{id}/progress/watched", query={"extended": extended, "hidden": hidden, "specials": specials, "count_specials": count_specials, "include_stats": include_stats}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_ratings(id_: str, extended: str | None = None) -> str:
+def get_shows_by_id_ratings(id: str, extended: str | None = None) -> str:
     """Get show ratings.
 
     GET /shows/{id}/ratings
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Use `all` to include ratings from supported external sources.
     """
-    return call("GET", f"/shows/{id_}/ratings", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/ratings", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_related(id_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_shows_by_id_related(id: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get related shows.
 
     GET /shows/{id}/related
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/shows/{id_}/related", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/shows/{id}/related", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons(id_: str, extended: str | None = None) -> str:
+def get_shows_by_id_seasons(id: str, extended: str | None = None) -> str:
     """Get all seasons for a show.
 
     GET /shows/{id}/seasons
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/seasons", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season(id_: str, season: int, extended: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season(id: str, season: int, extended: str | None = None) -> str:
     """Get all episodes for a single season.
 
     GET /shows/{id}/seasons/{season}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_comments_by_sort(id_: str, season: int, sort: str, extended: str | None = None, page: int | None = None, limit: str | None = None, language: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_comments_by_sort(id: str, season: int, sort: str, extended: str | None = None, page: int | None = None, limit: str | None = None, language: str | None = None) -> str:
     """Get all season comments.
 
     GET /shows/{id}/seasons/{season}/comments/{sort}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         sort: Path parameter.
         extended: Extended information to include in the response.
@@ -2733,32 +2733,32 @@ def get_shows_by_id_seasons_by_season_comments_by_sort(id_: str, season: int, so
         limit: The number of items per page, can be a number or the value all
         language: Filter comments to a 2 character language code
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/comments/{sort}", query={"extended": extended, "page": page, "limit": limit, "language": language}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/comments/{sort}", query={"extended": extended, "page": page, "limit": limit, "language": language}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_episodes_by_episode(id_: str, season: int, episode: int, extended: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_episodes_by_episode(id: str, season: int, episode: int, extended: str | None = None) -> str:
     """Get a single episode for a show.
 
     GET /shows/{id}/seasons/{season}/episodes/{episode}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         episode: Episode number
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/episodes/{episode}", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/episodes/{episode}", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_episodes_by_episode_comments_by_sort(id_: str, season: int, episode: int, sort: str, extended: str | None = None, page: int | None = None, limit: str | None = None, language: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_episodes_by_episode_comments_by_sort(id: str, season: int, episode: int, sort: str, extended: str | None = None, page: int | None = None, limit: str | None = None, language: str | None = None) -> str:
     """Get all episode comments.
 
     GET /shows/{id}/seasons/{season}/episodes/{episode}/comments/{sort}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         episode: Episode number
         sort: Path parameter.
@@ -2767,249 +2767,249 @@ def get_shows_by_id_seasons_by_season_episodes_by_episode_comments_by_sort(id_: 
         limit: The number of items per page, can be a number or the value all
         language: Filter comments to a 2 character language code
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/episodes/{episode}/comments/{sort}", query={"extended": extended, "page": page, "limit": limit, "language": language}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/episodes/{episode}/comments/{sort}", query={"extended": extended, "page": page, "limit": limit, "language": language}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_episodes_by_episode_lists_by_type_by_sort(id_: str, season: int, episode: int, sort: str, type_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_shows_by_id_seasons_by_season_episodes_by_episode_lists_by_type_by_sort(id: str, season: int, episode: int, sort: str, type: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get lists containing this episode.
 
     GET /shows/{id}/seasons/{season}/episodes/{episode}/lists/{type}/{sort}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         episode: Episode number
         sort: Path parameter.
-        type_: Path parameter.
+        type: Path parameter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/episodes/{episode}/lists/{type_}/{sort}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/episodes/{episode}/lists/{type}/{sort}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_episodes_by_episode_people(id_: str, season: int, episode: int, extended: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_episodes_by_episode_people(id: str, season: int, episode: int, extended: str | None = None) -> str:
     """Get all people for an episode.
 
     GET /shows/{id}/seasons/{season}/episodes/{episode}/people
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         episode: Episode number
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/episodes/{episode}/people", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/episodes/{episode}/people", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_episodes_by_episode_ratings(id_: str, season: int, episode: int, extended: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_episodes_by_episode_ratings(id: str, season: int, episode: int, extended: str | None = None) -> str:
     """Get episode ratings.
 
     GET /shows/{id}/seasons/{season}/episodes/{episode}/ratings
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         episode: Episode number
         extended: Use `all` to include ratings from supported external sources.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/episodes/{episode}/ratings", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/episodes/{episode}/ratings", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_episodes_by_episode_stats(id_: str, season: int, episode: int) -> str:
+def get_shows_by_id_seasons_by_season_episodes_by_episode_stats(id: str, season: int, episode: int) -> str:
     """Get episode stats.
 
     GET /shows/{id}/seasons/{season}/episodes/{episode}/stats
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         episode: Episode number
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/episodes/{episode}/stats", query=None, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/episodes/{episode}/stats", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_episodes_by_episode_translations(id_: str, season: int, episode: int, language: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_episodes_by_episode_translations(id: str, season: int, episode: int, language: str | None = None) -> str:
     """Get all episode translations.
 
     GET /shows/{id}/seasons/{season}/episodes/{episode}/translations
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         episode: Episode number
         language: Filter translations to a 2 character language code
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/episodes/{episode}/translations", query={"language": language}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/episodes/{episode}/translations", query={"language": language}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_episodes_by_episode_videos(id_: str, season: int, episode: int) -> str:
+def get_shows_by_id_seasons_by_season_episodes_by_episode_videos(id: str, season: int, episode: int) -> str:
     """Get all videos.
 
     GET /shows/{id}/seasons/{season}/episodes/{episode}/videos
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         episode: Episode number
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/episodes/{episode}/videos", query=None, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/episodes/{episode}/videos", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_episodes_by_episode_watching(id_: str, season: int, episode: int, extended: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_episodes_by_episode_watching(id: str, season: int, episode: int, extended: str | None = None) -> str:
     """Get users watching right now.
 
     GET /shows/{id}/seasons/{season}/episodes/{episode}/watching
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         episode: Episode number
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/episodes/{episode}/watching", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/episodes/{episode}/watching", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_episodes_by_episode_watchnow_by_country(id_: str, country: str, season: int, episode: int, links: str | None = None, extended: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_episodes_by_episode_watchnow_by_country(id: str, country: str, season: int, episode: int, links: str | None = None, extended: str | None = None) -> str:
     """Get episode watch now sources.
 
     GET /shows/{id}/seasons/{season}/episodes/{episode}/watchnow/{country}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         country: 2 character country code.
         season: Season number
         episode: Episode number
         links: Query parameter.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/episodes/{episode}/watchnow/{country}", query={"links": links, "extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/episodes/{episode}/watchnow/{country}", query={"links": links, "extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_info(id_: str, season: int, extended: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_info(id: str, season: int, extended: str | None = None) -> str:
     """Get single seasons for a show.
 
     GET /shows/{id}/seasons/{season}/info
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/info", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/info", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_lists_by_type_by_sort(id_: str, season: int, sort: str, type_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_shows_by_id_seasons_by_season_lists_by_type_by_sort(id: str, season: int, sort: str, type: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get lists containing this season.
 
     GET /shows/{id}/seasons/{season}/lists/{type}/{sort}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         sort: Path parameter.
-        type_: Path parameter.
+        type: Path parameter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/lists/{type_}/{sort}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/lists/{type}/{sort}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_people(id_: str, season: int, extended: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_people(id: str, season: int, extended: str | None = None) -> str:
     """Get all people for a season.
 
     GET /shows/{id}/seasons/{season}/people
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/people", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/people", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_ratings(id_: str, season: int, extended: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_ratings(id: str, season: int, extended: str | None = None) -> str:
     """Get season ratings.
 
     GET /shows/{id}/seasons/{season}/ratings
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         extended: Use `all` to include ratings from supported external sources.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/ratings", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/ratings", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_stats(id_: str, season: int) -> str:
+def get_shows_by_id_seasons_by_season_stats(id: str, season: int) -> str:
     """Get season stats.
 
     GET /shows/{id}/seasons/{season}/stats
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/stats", query=None, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/stats", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_translations(id_: str, season: int, language: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_translations(id: str, season: int, language: str | None = None) -> str:
     """Get all season translations.
 
     GET /shows/{id}/seasons/{season}/translations
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         language: Filter translations to a 2 character language code
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/translations", query={"language": language}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/translations", query={"language": language}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_videos(id_: str, season: int) -> str:
+def get_shows_by_id_seasons_by_season_videos(id: str, season: int) -> str:
     """Get all videos.
 
     GET /shows/{id}/seasons/{season}/videos
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/videos", query=None, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/videos", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_watching(id_: str, season: int, extended: str | None = None) -> str:
+def get_shows_by_id_seasons_by_season_watching(id: str, season: int, extended: str | None = None) -> str:
     """Get users watching right now.
 
     GET /shows/{id}/seasons/{season}/watching
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         season: Season number
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/watching", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/watching", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_seasons_by_season_watchnow_justwatch_links_by_country(season: str, country: str, id_: str) -> str:
+def get_shows_by_id_seasons_by_season_watchnow_justwatch_links_by_country(season: str, country: str, id: str) -> str:
     """Get season JustWatch links.
 
     GET /shows/{id}/seasons/{season}/watchnow/justwatch_links/{country}
@@ -3017,111 +3017,111 @@ def get_shows_by_id_seasons_by_season_watchnow_justwatch_links_by_country(season
     Args:
         season: Path parameter.
         country: Path parameter.
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/shows/{id_}/seasons/{season}/watchnow/justwatch_links/{country}", query=None, body=None, form=None)
+    return call("GET", f"/shows/{id}/seasons/{season}/watchnow/justwatch_links/{country}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_sentiments(id_: str) -> str:
+def get_shows_by_id_sentiments(id: str) -> str:
     """Get show sentiments.
 
     GET /shows/{id}/sentiments
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/shows/{id_}/sentiments", query=None, body=None, form=None)
+    return call("GET", f"/shows/{id}/sentiments", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_stats(id_: str) -> str:
+def get_shows_by_id_stats(id: str) -> str:
     """Get show stats.
 
     GET /shows/{id}/stats
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/shows/{id_}/stats", query=None, body=None, form=None)
+    return call("GET", f"/shows/{id}/stats", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_studios(id_: str) -> str:
+def get_shows_by_id_studios(id: str) -> str:
     """Get show studios.
 
     GET /shows/{id}/studios
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/shows/{id_}/studios", query=None, body=None, form=None)
+    return call("GET", f"/shows/{id}/studios", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_translations(id_: str, language: str | None = None) -> str:
+def get_shows_by_id_translations(id: str, language: str | None = None) -> str:
     """Get all show translations.
 
     GET /shows/{id}/translations
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         language: Filter translations to a 2 character language code
     """
-    return call("GET", f"/shows/{id_}/translations", query={"language": language}, body=None, form=None)
+    return call("GET", f"/shows/{id}/translations", query={"language": language}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_videos(id_: str) -> str:
+def get_shows_by_id_videos(id: str) -> str:
     """Get all videos.
 
     GET /shows/{id}/videos
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/shows/{id_}/videos", query=None, body=None, form=None)
+    return call("GET", f"/shows/{id}/videos", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_watching(id_: str, extended: str | None = None) -> str:
+def get_shows_by_id_watching(id: str, extended: str | None = None) -> str:
     """Get users watching right now.
 
     GET /shows/{id}/watching
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/watching", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/watching", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_watchnow_by_country(id_: str, country: str, links: str | None = None, extended: str | None = None) -> str:
+def get_shows_by_id_watchnow_by_country(id: str, country: str, links: str | None = None, extended: str | None = None) -> str:
     """Get show watch now sources.
 
     GET /shows/{id}/watchnow/{country}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         country: 2 character country code.
         links: Query parameter.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/shows/{id_}/watchnow/{country}", query={"links": links, "extended": extended}, body=None, form=None)
+    return call("GET", f"/shows/{id}/watchnow/{country}", query={"links": links, "extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_shows_by_id_watchnow_justwatch_links_by_country(country: str, id_: str) -> str:
+def get_shows_by_id_watchnow_justwatch_links_by_country(country: str, id: str) -> str:
     """Get show JustWatch links.
 
     GET /shows/{id}/watchnow/justwatch_links/{country}
 
     Args:
         country: Path parameter.
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
     """
-    return call("GET", f"/shows/{id_}/watchnow/justwatch_links/{country}", query=None, body=None, form=None)
+    return call("GET", f"/shows/{id}/watchnow/justwatch_links/{country}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -3367,64 +3367,64 @@ def get_smart_lists_by_list_id_items(list_id: str, extended: str | None = None, 
 
 
 @mcp.tool(annotations=_READ)
-def get_sync_collection_by_type(type_: str, extended: str | None = None, available_on: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_sync_collection_by_type(type: str, extended: str | None = None, available_on: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get collection.
 
     GET /sync/collection/{type}
 
     Args:
-        type_: Sync media type filter.
+        type: Sync media type filter.
         extended: Extended information to include in the response.
         available_on: Query parameter.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/sync/collection/{type_}", query={"extended": extended, "available_on": available_on, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/sync/collection/{type}", query={"extended": extended, "available_on": available_on, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_sync_favorites_by_type_by_sort_by_by_sort_how(type_: str, sort_by: str, sort_how: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_sync_favorites_by_type_by_sort_by_by_sort_how(type: str, sort_by: str, sort_how: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get favorites.
 
     GET /sync/favorites/{type}/{sort_by}/{sort_how}
 
     Args:
-        type_: Sync media type filter.
+        type: Sync media type filter.
         sort_by: Sort by a specific property.
         sort_how: Sort direction.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/sync/favorites/{type_}/{sort_by}/{sort_how}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/sync/favorites/{type}/{sort_by}/{sort_how}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_sync_history_by_type_by_id(type_: str, id_: str, extended: str | None = None, page: int | None = None, limit: int | None = None, start_at: str | None = None, end_at: str | None = None) -> str:
+def get_sync_history_by_type_by_id(type: str, id: str, extended: str | None = None, page: int | None = None, limit: int | None = None, start_at: str | None = None, end_at: str | None = None) -> str:
     """Get watched history.
 
     GET /sync/history/{type}/{id}
 
     Args:
-        type_: Sync media type filter.
-        id_: Trakt ID for a specific item.
+        type: Sync media type filter.
+        id: Trakt ID for a specific item.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
         start_at: Start date for the range. Must be formatted as "YYYY-MM-DD".
         end_at: End date for the range. Must be formatted as "YYYY-MM-DD".
     """
-    return call("GET", f"/sync/history/{type_}/{id_}", query={"extended": extended, "page": page, "limit": limit, "start_at": start_at, "end_at": end_at}, body=None, form=None)
+    return call("GET", f"/sync/history/{type}/{id}", query={"extended": extended, "page": page, "limit": limit, "start_at": start_at, "end_at": end_at}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_sync_playback_by_type(type_: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, page: int | None = None, limit: int | None = None, start_at: str | None = None, end_at: str | None = None) -> str:
+def get_sync_playback_by_type(type: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, page: int | None = None, limit: int | None = None, start_at: str | None = None, end_at: str | None = None) -> str:
     """Get playback progress.
 
     GET /sync/playback/{type}
 
     Args:
-        type_: Sync media type filter.
+        type: Sync media type filter.
         extended: Extended information to include in the response.
         watchnow: Use "favorites" for streaming on a favorite service of the user.
       Use "any" for streaming on any service in the user's country.
@@ -3447,77 +3447,77 @@ def get_sync_playback_by_type(type_: str, extended: str | None = None, watchnow:
         start_at: Start date for the range. Must be formatted as "YYYY-MM-DD".
         end_at: End date for the range. Must be formatted as "YYYY-MM-DD".
     """
-    return call("GET", f"/sync/playback/{type_}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "page": page, "limit": limit, "start_at": start_at, "end_at": end_at}, body=None, form=None)
+    return call("GET", f"/sync/playback/{type}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "page": page, "limit": limit, "start_at": start_at, "end_at": end_at}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_sync_ratings_by_type_by_rating(type_: str, rating: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_sync_ratings_by_type_by_rating(type: str, rating: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get ratings.
 
     GET /sync/ratings/{type}/{rating}
 
     Args:
-        type_: Sync media type filter.
+        type: Sync media type filter.
         rating: Rating filter from 1 to 10.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/sync/ratings/{type_}/{rating}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/sync/ratings/{type}/{rating}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_sync_watched_by_type(type_: str, extended: str | None = None) -> str:
+def get_sync_watched_by_type(type: str, extended: str | None = None) -> str:
     """Get watched.
 
     GET /sync/watched/{type}
 
     Args:
-        type_: Sync media type filter.
+        type: Sync media type filter.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/sync/watched/{type_}", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/sync/watched/{type}", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_sync_watchlist_by_type_by_sort_by_by_sort_how(type_: str, sort_by: str, sort_how: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_sync_watchlist_by_type_by_sort_by_by_sort_how(type: str, sort_by: str, sort_how: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get watchlist.
 
     GET /sync/watchlist/{type}/{sort_by}/{sort_how}
 
     Args:
-        type_: Sync media type filter.
+        type: Sync media type filter.
         sort_by: Sort by a specific property.
         sort_how: Sort direction.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/sync/watchlist/{type_}/{sort_by}/{sort_how}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/sync/watchlist/{type}/{sort_by}/{sort_how}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id(id_: str, extended: str | None = None) -> str:
+def get_users_by_id(id: str, extended: str | None = None) -> str:
     """Get user profile.
 
     GET /users/{id}/
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/users/{id_}/", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/users/{id}/", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_by_type_activities(id_: str, type_: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_by_type_activities(id: str, type: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get social activity.
 
     GET /users/{id}/{type}/activities
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
-        type_: Path parameter.
+        id: The slug that identifies the user, or "me" for the authenticated user.
+        type: Path parameter.
         extended: Extended information to include in the response.
         watchnow: Use "favorites" for streaming on a favorite service of the user.
       Use "any" for streaming on any service in the user's country.
@@ -3541,18 +3541,18 @@ def get_users_by_id_by_type_activities(id_: str, type_: str, extended: str | Non
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/{type_}/activities", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/{type}/activities", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_collection_by_type(id_: str, type_: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_collection_by_type(id: str, type: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get collection.
 
     GET /users/{id}/collection/{type}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
-        type_: User media type filter.
+        id: The slug that identifies the user, or "me" for the authenticated user.
+        type: User media type filter.
         extended: Extended information to include in the response.
         watchnow: Use "favorites" for streaming on a favorite service of the user.
       Use "any" for streaming on any service in the user's country.
@@ -3573,36 +3573,36 @@ def get_users_by_id_collection_by_type(id_: str, type_: str, extended: str | Non
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/collection/{type_}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/collection/{type}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_comments_by_comment_type_by_type(id_: str, comment_type: str, type_: str, extended: str | None = None, page: int | None = None, limit: int | None = None, include_replies: str | None = None) -> str:
+def get_users_by_id_comments_by_comment_type_by_type(id: str, comment_type: str, type: str, extended: str | None = None, page: int | None = None, limit: int | None = None, include_replies: str | None = None) -> str:
     """Get comments.
 
     GET /users/{id}/comments/{comment_type}/{type}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         comment_type: Path parameter.
-        type_: Path parameter.
+        type: Path parameter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
         include_replies: Query parameter.
     """
-    return call("GET", f"/users/{id_}/comments/{comment_type}/{type_}", query={"extended": extended, "page": page, "limit": limit, "include_replies": include_replies}, body=None, form=None)
+    return call("GET", f"/users/{id}/comments/{comment_type}/{type}", query={"extended": extended, "page": page, "limit": limit, "include_replies": include_replies}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_favorites_by_type_by_sort_by_by_sort_how(id_: str, type_: str, sort_by: str, sort_how: str, extended: str | None = None, sort_by_query: str | None = None, sort_how_query: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_favorites_by_type_by_sort_by_by_sort_how(id: str, type: str, sort_by: str, sort_how: str, extended: str | None = None, sort_by_query: str | None = None, sort_how_query: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get favorites.
 
     GET /users/{id}/favorites/{type}/{sort_by}/{sort_how}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
-        type_: Favorites media type filter.
+        id: The slug that identifies the user, or "me" for the authenticated user.
+        type: Favorites media type filter.
         sort_by: Sort by a specific property.
         sort_how: Sort direction.
         extended: Extended information to include in the response.
@@ -3611,32 +3611,32 @@ def get_users_by_id_favorites_by_type_by_sort_by_by_sort_how(id_: str, type_: st
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/favorites/{type_}/{sort_by}/{sort_how}", query={"extended": extended, "sort_by": sort_by_query, "sort_how": sort_how_query, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/favorites/{type}/{sort_by}/{sort_how}", query={"extended": extended, "sort_by": sort_by_query, "sort_how": sort_how_query, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_favorites_comments_by_sort(id_: str, sort: str, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_favorites_comments_by_sort(id: str, sort: str, page: int | None = None, limit: int | None = None) -> str:
     """Get all favorites comments.
 
     GET /users/{id}/favorites/comments/{sort}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         sort: Path parameter.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/favorites/comments/{sort}", query={"page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/favorites/comments/{sort}", query={"page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_favorites_media_by_sort(id_: str, sort: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_favorites_media_by_sort(id: str, sort: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get favorite media.
 
     GET /users/{id}/favorites/media/{sort}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         sort: Path parameter.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
@@ -3644,17 +3644,17 @@ def get_users_by_id_favorites_media_by_sort(id_: str, sort: str, extended: str |
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/favorites/media/{sort}", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/favorites/media/{sort}", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_favorites_movies_by_sort(id_: str, sort: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_favorites_movies_by_sort(id: str, sort: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get favorite movies.
 
     GET /users/{id}/favorites/movies/{sort}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         sort: Path parameter.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
@@ -3662,17 +3662,17 @@ def get_users_by_id_favorites_movies_by_sort(id_: str, sort: str, extended: str 
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/favorites/movies/{sort}", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/favorites/movies/{sort}", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_favorites_shows_by_sort(id_: str, sort: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_favorites_shows_by_sort(id: str, sort: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get favorite shows.
 
     GET /users/{id}/favorites/shows/{sort}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         sort: Path parameter.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
@@ -3680,56 +3680,56 @@ def get_users_by_id_favorites_shows_by_sort(id_: str, sort: str, extended: str |
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/favorites/shows/{sort}", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/favorites/shows/{sort}", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_followers(id_: str, extended: str | None = None) -> str:
+def get_users_by_id_followers(id: str, extended: str | None = None) -> str:
     """Get followers.
 
     GET /users/{id}/followers
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/users/{id_}/followers", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/users/{id}/followers", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_following(id_: str, extended: str | None = None) -> str:
+def get_users_by_id_following(id: str, extended: str | None = None) -> str:
     """Get following.
 
     GET /users/{id}/following
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/users/{id_}/following", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/users/{id}/following", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_friends(id_: str, extended: str | None = None) -> str:
+def get_users_by_id_friends(id: str, extended: str | None = None) -> str:
     """Get friends.
 
     GET /users/{id}/friends
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/users/{id_}/friends", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/users/{id}/friends", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_history(id_: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_history(id: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get watched history.
 
     GET /users/{id}/history/
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
         watchnow: Use "favorites" for streaming on a favorite service of the user.
       Use "any" for streaming on any service in the user's country.
@@ -3752,36 +3752,36 @@ def get_users_by_id_history(id_: str, extended: str | None = None, watchnow: str
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/history/", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/history/", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_history_by_type_by_item_id(id_: str, item_id: str, type_: str, extended: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_history_by_type_by_item_id(id: str, item_id: str, type: str, extended: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get watched history.
 
     GET /users/{id}/history/{type}/{item_id}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         item_id: Path parameter.
-        type_: History media type filter.
+        type: History media type filter.
         extended: Extended information to include in the response.
         start_at: Start date for the range. Must be formatted as "YYYY-MM-DD".
         end_at: End date for the range. Must be formatted as "YYYY-MM-DD".
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/history/{type_}/{item_id}", query={"extended": extended, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/history/{type}/{item_id}", query={"extended": extended, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_history_episodes(id_: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_history_episodes(id: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get episode watched history.
 
     GET /users/{id}/history/episodes
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
         watchnow: Use "favorites" for streaming on a favorite service of the user.
       Use "any" for streaming on any service in the user's country.
@@ -3804,17 +3804,17 @@ def get_users_by_id_history_episodes(id_: str, extended: str | None = None, watc
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/history/episodes", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/history/episodes", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_history_episodes_by_item_id(id_: str, item_id: str, extended: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_history_episodes_by_item_id(id: str, item_id: str, extended: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get history for an episode.
 
     GET /users/{id}/history/episodes/{item_id}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         item_id: Path parameter.
         extended: Extended information to include in the response.
         start_at: Start date for the range. Must be formatted as "YYYY-MM-DD".
@@ -3822,17 +3822,17 @@ def get_users_by_id_history_episodes_by_item_id(id_: str, item_id: str, extended
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/history/episodes/{item_id}", query={"extended": extended, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/history/episodes/{item_id}", query={"extended": extended, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_history_movies(id_: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_history_movies(id: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get movie watched history.
 
     GET /users/{id}/history/movies
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
         watchnow: Use "favorites" for streaming on a favorite service of the user.
       Use "any" for streaming on any service in the user's country.
@@ -3855,17 +3855,17 @@ def get_users_by_id_history_movies(id_: str, extended: str | None = None, watchn
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/history/movies", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/history/movies", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_history_movies_by_item_id(id_: str, item_id: str, extended: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_history_movies_by_item_id(id: str, item_id: str, extended: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get history for a movie.
 
     GET /users/{id}/history/movies/{item_id}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         item_id: Path parameter.
         extended: Extended information to include in the response.
         start_at: Start date for the range. Must be formatted as "YYYY-MM-DD".
@@ -3873,17 +3873,17 @@ def get_users_by_id_history_movies_by_item_id(id_: str, item_id: str, extended: 
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/history/movies/{item_id}", query={"extended": extended, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/history/movies/{item_id}", query={"extended": extended, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_history_shows(id_: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_history_shows(id: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get show watched history.
 
     GET /users/{id}/history/shows
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
         watchnow: Use "favorites" for streaming on a favorite service of the user.
       Use "any" for streaming on any service in the user's country.
@@ -3906,17 +3906,17 @@ def get_users_by_id_history_shows(id_: str, extended: str | None = None, watchno
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/history/shows", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/history/shows", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_history_shows_by_item_id(id_: str, item_id: str, extended: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_history_shows_by_item_id(id: str, item_id: str, extended: str | None = None, start_at: str | None = None, end_at: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get history for a show.
 
     GET /users/{id}/history/shows/{item_id}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         item_id: Path parameter.
         extended: Extended information to include in the response.
         start_at: Start date for the range. Must be formatted as "YYYY-MM-DD".
@@ -3924,80 +3924,80 @@ def get_users_by_id_history_shows_by_item_id(id_: str, item_id: str, extended: s
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/history/shows/{item_id}", query={"extended": extended, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/history/shows/{item_id}", query={"extended": extended, "start_at": start_at, "end_at": end_at, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_likes_by_type(id_: str, type_: str, extended: str | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_users_by_id_likes_by_type(id: str, type: str, extended: str | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get likes.
 
     GET /users/{id}/likes/{type}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
-        type_: User media type filter.
+        id: The slug that identifies the user, or "me" for the authenticated user.
+        type: User media type filter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/users/{id_}/likes/{type_}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/likes/{type}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_lists(id_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_lists(id: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get a user's personal lists.
 
     GET /users/{id}/lists
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/lists", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/lists", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_lists_by_list_id(id_: str, list_id: str, extended: str | None = None) -> str:
+def get_users_by_id_lists_by_list_id(id: str, list_id: str, extended: str | None = None) -> str:
     """Get personal list.
 
     GET /users/{id}/lists/{list_id}/
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/users/{id_}/lists/{list_id}/", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/users/{id}/lists/{list_id}/", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_lists_by_list_id_comments_by_sort(id_: str, list_id: str, sort: str, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_lists_by_list_id_comments_by_sort(id: str, list_id: str, sort: str, page: int | None = None, limit: int | None = None) -> str:
     """Get all list comments.
 
     GET /users/{id}/lists/{list_id}/comments/{sort}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         sort: Path parameter.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/lists/{list_id}/comments/{sort}", query={"page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/lists/{list_id}/comments/{sort}", query={"page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_lists_by_list_id_items_by_type_by_sort_by_by_sort_how(id_: str, list_id: str, type_: str, sort_by: str, sort_how: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_users_by_id_lists_by_list_id_items_by_type_by_sort_by_by_sort_how(id: str, list_id: str, type: str, sort_by: str, sort_how: str, extended: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get items on a personal list.
 
     GET /users/{id}/lists/{list_id}/items/{type}/{sort_by}/{sort_how}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
-        type_: List item type filter.
+        type: List item type filter.
         sort_by: Sort by a specific property.
         sort_how: Sort direction.
         extended: Extended information to include in the response.
@@ -4023,17 +4023,17 @@ def get_users_by_id_lists_by_list_id_items_by_type_by_sort_by_by_sort_how(id_: s
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/users/{id_}/lists/{list_id}/items/{type_}/{sort_by}/{sort_how}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/lists/{list_id}/items/{type}/{sort_by}/{sort_how}", query={"extended": extended, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_lists_by_list_id_items_movie(id_: str, list_id: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_users_by_id_lists_by_list_id_items_movie(id: str, list_id: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get movie list items.
 
     GET /users/{id}/lists/{list_id}/items/movie
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
@@ -4060,17 +4060,17 @@ def get_users_by_id_lists_by_list_id_items_movie(id_: str, list_id: str, extende
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/users/{id_}/lists/{list_id}/items/movie", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/lists/{list_id}/items/movie", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_lists_by_list_id_items_movie_show(id_: str, list_id: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_users_by_id_lists_by_list_id_items_movie_show(id: str, list_id: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get media list items.
 
     GET /users/{id}/lists/{list_id}/items/movie,show
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
@@ -4097,17 +4097,17 @@ def get_users_by_id_lists_by_list_id_items_movie_show(id_: str, list_id: str, ex
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/users/{id_}/lists/{list_id}/items/movie,show", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/lists/{list_id}/items/movie,show", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_lists_by_list_id_items_movie_show_season_episode(id_: str, list_id: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_users_by_id_lists_by_list_id_items_movie_show_season_episode(id: str, list_id: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get all list items.
 
     GET /users/{id}/lists/{list_id}/items/movie,show,season,episode
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
@@ -4134,17 +4134,17 @@ def get_users_by_id_lists_by_list_id_items_movie_show_season_episode(id_: str, l
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/users/{id_}/lists/{list_id}/items/movie,show,season,episode", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/lists/{list_id}/items/movie,show,season,episode", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_lists_by_list_id_items_show(id_: str, list_id: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
+def get_users_by_id_lists_by_list_id_items_show(id: str, list_id: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, ignore_watched: bool | None = None, ignore_collected: bool | None = None, ignore_watchlisted: bool | None = None, page: int | None = None, limit: str | None = None) -> str:
     """Get show list items.
 
     GET /users/{id}/lists/{list_id}/items/show
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
@@ -4171,253 +4171,253 @@ def get_users_by_id_lists_by_list_id_items_show(id_: str, list_id: str, extended
         page: The page number to retrieve
         limit: The number of items per page, can be a number or the value all
     """
-    return call("GET", f"/users/{id_}/lists/{list_id}/items/show", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/lists/{list_id}/items/show", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "ignore_watched": ignore_watched, "ignore_collected": ignore_collected, "ignore_watchlisted": ignore_watchlisted, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_lists_by_list_id_likes(id_: str, list_id: str, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_lists_by_list_id_likes(id: str, list_id: str, page: int | None = None, limit: int | None = None) -> str:
     """Get all users who liked a list.
 
     GET /users/{id}/lists/{list_id}/likes
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/lists/{list_id}/likes", query={"page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/lists/{list_id}/likes", query={"page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_lists_collaborations(id_: str, extended: str | None = None) -> str:
+def get_users_by_id_lists_collaborations(id: str, extended: str | None = None) -> str:
     """Get all lists a user can collaborate on.
 
     GET /users/{id}/lists/collaborations
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/users/{id_}/lists/collaborations", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/users/{id}/lists/collaborations", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_mir_by_year_by_month(id_: str, year: int, month: int, extended: str | None = None) -> str:
+def get_users_by_id_mir_by_year_by_month(id: str, year: int, month: int, extended: str | None = None) -> str:
     """Get month in review.
 
     GET /users/{id}/mir/{year}/{month}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         year: Path parameter.
         month: Path parameter.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/users/{id_}/mir/{year}/{month}", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/users/{id}/mir/{year}/{month}", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_notes_by_type(id_: str, type_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_notes_by_type(id: str, type: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get notes.
 
     GET /users/{id}/notes/{type}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
-        type_: User media type filter.
+        id: The slug that identifies the user, or "me" for the authenticated user.
+        type: User media type filter.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/notes/{type_}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/notes/{type}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_ratings(id_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_ratings(id: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get all ratings.
 
     GET /users/{id}/ratings/
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/ratings/", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/ratings/", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_ratings_by_type_by_rating(id_: str, type_: str, rating: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_ratings_by_type_by_rating(id: str, type: str, rating: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get ratings.
 
     GET /users/{id}/ratings/{type}/{rating}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
-        type_: Rated media type filter.
+        id: The slug that identifies the user, or "me" for the authenticated user.
+        type: Rated media type filter.
         rating: Rating filter from 1 to 10.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/ratings/{type_}/{rating}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/ratings/{type}/{rating}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_ratings_episodes(id_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_ratings_episodes(id: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get episode ratings.
 
     GET /users/{id}/ratings/episodes
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/ratings/episodes", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/ratings/episodes", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_ratings_movies(id_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_ratings_movies(id: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get movie ratings.
 
     GET /users/{id}/ratings/movies
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/ratings/movies", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/ratings/movies", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_ratings_shows(id_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_ratings_shows(id: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get show ratings.
 
     GET /users/{id}/ratings/shows
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/ratings/shows", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/ratings/shows", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_smart_lists(id_: str) -> str:
+def get_users_by_id_smart_lists(id: str) -> str:
     """Get a user's smart lists.
 
     GET /users/{id}/smart-lists
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
     """
-    return call("GET", f"/users/{id_}/smart-lists", query=None, body=None, form=None)
+    return call("GET", f"/users/{id}/smart-lists", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_smart_lists_by_list_id(id_: str, list_id: str) -> str:
+def get_users_by_id_smart_lists_by_list_id(id: str, list_id: str) -> str:
     """Get smart list.
 
     GET /users/{id}/smart-lists/{list_id}/
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
     """
-    return call("GET", f"/users/{id_}/smart-lists/{list_id}/", query=None, body=None, form=None)
+    return call("GET", f"/users/{id}/smart-lists/{list_id}/", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_stats(id_: str) -> str:
+def get_users_by_id_stats(id: str) -> str:
     """Get stats.
 
     GET /users/{id}/stats
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
     """
-    return call("GET", f"/users/{id_}/stats", query=None, body=None, form=None)
+    return call("GET", f"/users/{id}/stats", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_watched_by_type(id_: str, type_: str, extended: str | None = None, hidden: bool | None = None, specials: bool | None = None, count_specials: bool | None = None) -> str:
+def get_users_by_id_watched_by_type(id: str, type: str, extended: str | None = None, hidden: bool | None = None, specials: bool | None = None, count_specials: bool | None = None) -> str:
     """Get watched.
 
     GET /users/{id}/watched/{type}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
-        type_: Watched media type filter.
+        id: The slug that identifies the user, or "me" for the authenticated user.
+        type: Watched media type filter.
         extended: Extended information to include in the response.
         hidden: Whether to include any hidden seasons
         specials: Whether to include special seasons as season 0.
         count_specials: Whether to count specials in the overall stats (only applies if specials are included).
     """
-    return call("GET", f"/users/{id_}/watched/{type_}", query={"extended": extended, "hidden": hidden, "specials": specials, "count_specials": count_specials}, body=None, form=None)
+    return call("GET", f"/users/{id}/watched/{type}", query={"extended": extended, "hidden": hidden, "specials": specials, "count_specials": count_specials}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_watched_movies(id_: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_watched_movies(id: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get watched movies.
 
     GET /users/{id}/watched/movies
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Query parameter.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/watched/movies", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/watched/movies", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_watched_shows(id_: str, extended: str | None = None, page: int | None = None, limit: int | None = None, specials: bool | None = None, season_numbers: bool | None = None) -> str:
+def get_users_by_id_watched_shows(id: str, extended: str | None = None, page: int | None = None, limit: int | None = None, specials: bool | None = None, season_numbers: bool | None = None) -> str:
     """Get watched shows.
 
     GET /users/{id}/watched/shows
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Query parameter.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
         specials: Whether to include special seasons as season 0.
         season_numbers: Query parameter.
     """
-    return call("GET", f"/users/{id_}/watched/shows", query={"extended": extended, "page": page, "limit": limit, "specials": specials, "season_numbers": season_numbers}, body=None, form=None)
+    return call("GET", f"/users/{id}/watched/shows", query={"extended": extended, "page": page, "limit": limit, "specials": specials, "season_numbers": season_numbers}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_watching(id_: str, extended: str | None = None) -> str:
+def get_users_by_id_watching(id: str, extended: str | None = None) -> str:
     """Get watching.
 
     GET /users/{id}/watching
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/users/{id_}/watching", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/users/{id}/watching", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_watchlist_by_type_by_sort_by_by_sort_how(id_: str, type_: str, sort_by: str, sort_how: str, extended: str | None = None, sort_by_query: str | None = None, sort_how_query: str | None = None, page: int | None = None, limit: int | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, hide: str | None = None) -> str:
+def get_users_by_id_watchlist_by_type_by_sort_by_by_sort_how(id: str, type: str, sort_by: str, sort_how: str, extended: str | None = None, sort_by_query: str | None = None, sort_how_query: str | None = None, page: int | None = None, limit: int | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, hide: str | None = None) -> str:
     """Get watchlist.
 
     GET /users/{id}/watchlist/{type}/{sort_by}/{sort_how}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
-        type_: Watchlist media type filter.
+        id: The slug that identifies the user, or "me" for the authenticated user.
+        type: Watchlist media type filter.
         sort_by: Sort by a specific property.
         sort_how: Sort direction.
         extended: Extended information to include in the response.
@@ -4443,32 +4443,32 @@ def get_users_by_id_watchlist_by_type_by_sort_by_by_sort_how(id_: str, type_: st
         certifications: Query parameter.
         hide: Query parameter.
     """
-    return call("GET", f"/users/{id_}/watchlist/{type_}/{sort_by}/{sort_how}", query={"extended": extended, "sort_by": sort_by_query, "sort_how": sort_how_query, "page": page, "limit": limit, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "hide": hide}, body=None, form=None)
+    return call("GET", f"/users/{id}/watchlist/{type}/{sort_by}/{sort_how}", query={"extended": extended, "sort_by": sort_by_query, "sort_how": sort_how_query, "page": page, "limit": limit, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "hide": hide}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_watchlist_comments_by_sort(id_: str, sort: str, page: int | None = None, limit: int | None = None) -> str:
+def get_users_by_id_watchlist_comments_by_sort(id: str, sort: str, page: int | None = None, limit: int | None = None) -> str:
     """Get all watchlist comments.
 
     GET /users/{id}/watchlist/comments/{sort}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         sort: Path parameter.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/{id_}/watchlist/comments/{sort}", query={"page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/{id}/watchlist/comments/{sort}", query={"page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_watchlist_movie_show_by_sort(id_: str, sort: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, page: int | None = None, limit: int | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, hide: str | None = None) -> str:
+def get_users_by_id_watchlist_movie_show_by_sort(id: str, sort: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, page: int | None = None, limit: int | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, hide: str | None = None) -> str:
     """Get media watchlist.
 
     GET /users/{id}/watchlist/movie,show/{sort}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         sort: Path parameter.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
@@ -4493,17 +4493,17 @@ def get_users_by_id_watchlist_movie_show_by_sort(id_: str, sort: str, extended: 
         certifications: Query parameter.
         hide: Query parameter.
     """
-    return call("GET", f"/users/{id_}/watchlist/movie,show/{sort}", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "page": page, "limit": limit, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "hide": hide}, body=None, form=None)
+    return call("GET", f"/users/{id}/watchlist/movie,show/{sort}", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "page": page, "limit": limit, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "hide": hide}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_watchlist_movies_by_sort(id_: str, sort: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, page: int | None = None, limit: int | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, hide: str | None = None) -> str:
+def get_users_by_id_watchlist_movies_by_sort(id: str, sort: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, page: int | None = None, limit: int | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, hide: str | None = None) -> str:
     """Get movie watchlist.
 
     GET /users/{id}/watchlist/movies/{sort}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         sort: Path parameter.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
@@ -4528,17 +4528,17 @@ def get_users_by_id_watchlist_movies_by_sort(id_: str, sort: str, extended: str 
         certifications: Query parameter.
         hide: Query parameter.
     """
-    return call("GET", f"/users/{id_}/watchlist/movies/{sort}", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "page": page, "limit": limit, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "hide": hide}, body=None, form=None)
+    return call("GET", f"/users/{id}/watchlist/movies/{sort}", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "page": page, "limit": limit, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "hide": hide}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_watchlist_shows_by_sort(id_: str, sort: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, page: int | None = None, limit: int | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, hide: str | None = None) -> str:
+def get_users_by_id_watchlist_shows_by_sort(id: str, sort: str, extended: str | None = None, sort_by: str | None = None, sort_how: str | None = None, page: int | None = None, limit: int | None = None, watchnow: str | None = None, genres: str | None = None, subgenres: str | None = None, years: str | None = None, ratings: str | None = None, start_date: str | None = None, end_date: str | None = None, runtimes: str | None = None, countries: str | None = None, certifications: str | None = None, hide: str | None = None) -> str:
     """Get show watchlist.
 
     GET /users/{id}/watchlist/shows/{sort}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         sort: Path parameter.
         extended: Extended information to include in the response.
         sort_by: The field to sort by
@@ -4563,25 +4563,25 @@ def get_users_by_id_watchlist_shows_by_sort(id_: str, sort: str, extended: str |
         certifications: Query parameter.
         hide: Query parameter.
     """
-    return call("GET", f"/users/{id_}/watchlist/shows/{sort}", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "page": page, "limit": limit, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "hide": hide}, body=None, form=None)
+    return call("GET", f"/users/{id}/watchlist/shows/{sort}", query={"extended": extended, "sort_by": sort_by, "sort_how": sort_how, "page": page, "limit": limit, "watchnow": watchnow, "genres": genres, "subgenres": subgenres, "years": years, "ratings": ratings, "start_date": start_date, "end_date": end_date, "runtimes": runtimes, "countries": countries, "certifications": certifications, "hide": hide}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_by_id_yir_by_year(id_: str, year: int, extended: str | None = None) -> str:
+def get_users_by_id_yir_by_year(id: str, year: int, extended: str | None = None) -> str:
     """Get year in review.
 
     GET /users/{id}/yir/{year}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         year: Path parameter.
         extended: Extended information to include in the response.
     """
-    return call("GET", f"/users/{id_}/yir/{year}", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/users/{id}/yir/{year}", query={"extended": extended}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_hidden_by_section(section: str, extended: str | None = None, page: int | None = None, limit: int | None = None, type_: str | None = None) -> str:
+def get_users_hidden_by_section(section: str, extended: str | None = None, page: int | None = None, limit: int | None = None, type: str | None = None) -> str:
     """Get hidden items.
 
     GET /users/hidden/{section}
@@ -4591,9 +4591,9 @@ def get_users_hidden_by_section(section: str, extended: str | None = None, page:
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
-        type_: Hidden item type filter.
+        type: Hidden item type filter.
     """
-    return call("GET", f"/users/hidden/{section}", query={"extended": extended, "page": page, "limit": limit, "type": type_}, body=None, form=None)
+    return call("GET", f"/users/hidden/{section}", query={"extended": extended, "page": page, "limit": limit, "type": type}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -4623,57 +4623,57 @@ def get_users_settings_plex_servers_by_server_id(server_id: str) -> str:
 
 
 @mcp.tool(annotations=_READ)
-def get_users_syncs_by_id(id_: int) -> str:
+def get_users_syncs_by_id(id: int) -> str:
     """Get a data sync.
 
     GET /users/syncs/{id}
 
     Args:
-        id_: The numeric sync id, scoped to the authenticated user. A numeric segment hits a single sync; a non-numeric segment is the filtered list.
+        id: The numeric sync id, scoped to the authenticated user. A numeric segment hits a single sync; a non-numeric segment is the filtered list.
     """
-    return call("GET", f"/users/syncs/{id_}", query=None, body=None, form=None)
+    return call("GET", f"/users/syncs/{id}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_syncs_by_id_paused(id_: int, page: int | None = None, limit: int | None = None) -> str:
+def get_users_syncs_by_id_paused(id: int, page: int | None = None, limit: int | None = None) -> str:
     """Get paused sync items.
 
     GET /users/syncs/{id}/paused
 
     Args:
-        id_: The numeric sync id, scoped to the authenticated user. A numeric segment hits a single sync; a non-numeric segment is the filtered list.
+        id: The numeric sync id, scoped to the authenticated user. A numeric segment hits a single sync; a non-numeric segment is the filtered list.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/syncs/{id_}/paused", query={"page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/syncs/{id}/paused", query={"page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_syncs_by_id_skipped(id_: int, page: int | None = None, limit: int | None = None) -> str:
+def get_users_syncs_by_id_skipped(id: int, page: int | None = None, limit: int | None = None) -> str:
     """Get skipped sync items.
 
     GET /users/syncs/{id}/skipped
 
     Args:
-        id_: The numeric sync id, scoped to the authenticated user. A numeric segment hits a single sync; a non-numeric segment is the filtered list.
+        id: The numeric sync id, scoped to the authenticated user. A numeric segment hits a single sync; a non-numeric segment is the filtered list.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/syncs/{id_}/skipped", query={"page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/syncs/{id}/skipped", query={"page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
-def get_users_syncs_by_type(type_: str, page: int | None = None, limit: int | None = None) -> str:
+def get_users_syncs_by_type(type: str, page: int | None = None, limit: int | None = None) -> str:
     """Get data syncs by type.
 
     GET /users/syncs/{type}
 
     Args:
-        type_: Filter syncs by the app that created them. An unknown type returns `404` rather than silently returning everything.
+        type: Filter syncs by the app that created them. An unknown type returns `404` rather than silently returning everything.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/users/syncs/{type_}", query={"page": page, "limit": limit}, body=None, form=None)
+    return call("GET", f"/users/syncs/{type}", query={"page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -5506,7 +5506,7 @@ def list_users_hidden_dropped(extended: str | None = None, page: int | None = No
 
 
 @mcp.tool(annotations=_READ)
-def list_users_hidden_progress_watched(extended: str | None = None, page: int | None = None, limit: int | None = None, type_: str | None = None) -> str:
+def list_users_hidden_progress_watched(extended: str | None = None, page: int | None = None, limit: int | None = None, type: str | None = None) -> str:
     """Get hidden progress items.
 
     GET /users/hidden/progress_watched
@@ -5515,9 +5515,9 @@ def list_users_hidden_progress_watched(extended: str | None = None, page: int | 
         extended: Extended information to include in the response.
         page: The page number to retrieve
         limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
-        type_: Query parameter.
+        type: Query parameter.
     """
-    return call("GET", "/users/hidden/progress_watched", query={"extended": extended, "page": page, "limit": limit, "type": type_}, body=None, form=None)
+    return call("GET", "/users/hidden/progress_watched", query={"extended": extended, "page": page, "limit": limit, "type": type}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -5620,29 +5620,29 @@ def list_younify_connections() -> str:
 
 
 @mcp.tool(annotations=_WRITE)
-def update_comments_by_id(id_: str, body: dict) -> str:
+def update_comments_by_id(id: str, body: dict) -> str:
     """Update a comment or reply.
 
     PUT /comments/{id}/
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", f"/comments/{id_}/", query=None, body=body, form=None)
+    return call("PUT", f"/comments/{id}/", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def update_notes_by_id(id_: str, body: dict) -> str:
+def update_notes_by_id(id: str, body: dict) -> str:
     """Update a note.
 
     PUT /notes/{id}
 
     Args:
-        id_: The id/slug of the resource.
+        id: The id/slug of the resource.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", f"/notes/{id_}", query=None, body=body, form=None)
+    return call("PUT", f"/notes/{id}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -5708,46 +5708,46 @@ def update_users_avatar(body: dict) -> str:
 
 
 @mcp.tool(annotations=_WRITE)
-def update_users_by_id_lists_by_list_id(id_: str, list_id: str, body: dict) -> str:
+def update_users_by_id_lists_by_list_id(id: str, list_id: str, body: dict) -> str:
     """Update personal list.
 
     PUT /users/{id}/lists/{list_id}/
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", f"/users/{id_}/lists/{list_id}/", query=None, body=body, form=None)
+    return call("PUT", f"/users/{id}/lists/{list_id}/", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def update_users_by_id_lists_by_list_id_items_by_list_item_id(id_: str, list_id: str, list_item_id: str, body: dict) -> str:
+def update_users_by_id_lists_by_list_id_items_by_list_item_id(id: str, list_id: str, list_item_id: str, body: dict) -> str:
     """Update a list item.
 
     PUT /users/{id}/lists/{list_id}/items/{list_item_id}
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         list_item_id: List item ID.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", f"/users/{id_}/lists/{list_id}/items/{list_item_id}", query=None, body=body, form=None)
+    return call("PUT", f"/users/{id}/lists/{list_id}/items/{list_item_id}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
-def update_users_by_id_smart_lists_by_list_id(id_: str, list_id: str, body: dict) -> str:
+def update_users_by_id_smart_lists_by_list_id(id: str, list_id: str, body: dict) -> str:
     """Update smart list.
 
     PUT /users/{id}/smart-lists/{list_id}/
 
     Args:
-        id_: The slug that identifies the user, or "me" for the authenticated user.
+        id: The slug that identifies the user, or "me" for the authenticated user.
         list_id: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", f"/users/{id_}/smart-lists/{list_id}/", query=None, body=body, form=None)
+    return call("PUT", f"/users/{id}/smart-lists/{list_id}/", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
