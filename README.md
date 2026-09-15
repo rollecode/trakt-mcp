@@ -98,6 +98,37 @@ The token lands in `~/.cache/trakt-mcp/token.json` with mode 600 and is refreshe
 
 Trakt reports paging in headers rather than the body, so every result carries a `pagination` block alongside `result` when the endpoint is paged.
 
+## Hosting it
+
+Running it over HTTP puts it in reach of Claude.ai as a custom connector, and of Claude Code on other machines. Three tiers, the same shape the other servers in this family use:
+
+| Tier | Port | What it does |
+| --- | --- | --- |
+| `trakt-mcp` | 8580 | The server. No login of its own, never exposed |
+| nginx | 8581 | Front door, behind a Cloudflare Tunnel |
+| `auth-server.js` | 8582 | OAuth 2.1 sign-in, or a fixed bearer token |
+
+```bash
+npm install
+node set-password.js 'a password for the sign-in page'
+printf 'TRAKT_CLIENT_ID=...\n' > ~/.config/trakt-mcp/env
+chmod 600 ~/.config/trakt-mcp/env
+```
+
+Copy `systemd/*.service` into `/etc/systemd/system/`, replacing `YOUR_USER` and the `ISSUER` hostname, then:
+
+```bash
+sudo systemctl enable --now trakt-mcp trakt-mcp-auth
+```
+
+Point `nginx/trakt-mcp.conf` at your own hostname and send the tunnel at `127.0.0.1:8581`.
+
+Environment the server itself reads: `TRAKT_CLIENT_ID, TRAKT_CLIENT_SECRET`. The sign-in page carries the Trakt mark and accent colour, set through `APP_NAME`, `APP_ACCENT` and `APP_BLURB` in the auth unit.
+
+### Claude.ai
+
+Settings, Connectors, Add custom connector, URL `https://trakt-mcp.your-domain/mcp`, client ID and secret blank. The sign-in page asks for the password set above. Connectors belong to the account, so adding it once covers mobile too.
+
 ## Development
 
 ```bash
