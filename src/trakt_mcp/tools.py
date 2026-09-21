@@ -9,7 +9,6 @@ One tool per operation, 334 of them, covering the whole API.
 
 from .runtime import _DESTRUCTIVE, _READ, _WRITE, call, mcp
 
-
 @mcp.tool(annotations=_WRITE)
 def create_checkin(body: dict) -> str:
     """Check into an item.
@@ -3467,7 +3466,7 @@ def get_sync_ratings_by_type_by_rating(type: str, rating: str, extended: str | N
 
 
 @mcp.tool(annotations=_READ)
-def get_sync_watched_by_type(type: str, extended: str | None = None) -> str:
+def get_sync_watched_by_type(type: str, extended: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get watched.
 
     GET /sync/watched/{type}
@@ -3475,8 +3474,10 @@ def get_sync_watched_by_type(type: str, extended: str | None = None) -> str:
     Args:
         type: Sync media type filter.
         extended: Extended information to include in the response.
+        page: The page number to retrieve
+        limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", f"/sync/watched/{type}", query={"extended": extended}, body=None, form=None)
+    return call("GET", f"/sync/watched/{type}", query={"extended": extended, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -5347,7 +5348,7 @@ def list_sync_collection_movies(extended: str | None = None, available_on: str |
 
 
 @mcp.tool(annotations=_READ)
-def list_sync_collection_shows(extended: str | None = None, available_on: str | None = None) -> str:
+def list_sync_collection_shows(extended: str | None = None, available_on: str | None = None, page: int | None = None, limit: int | None = None) -> str:
     """Get show collection.
 
     GET /sync/collection/shows
@@ -5355,8 +5356,10 @@ def list_sync_collection_shows(extended: str | None = None, available_on: str | 
     Args:
         extended: Extended information to include in the response.
         available_on: Query parameter.
+        page: The page number to retrieve
+        limit: The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.
     """
-    return call("GET", "/sync/collection/shows", query={"extended": extended, "available_on": available_on}, body=None, form=None)
+    return call("GET", "/sync/collection/shows", query={"extended": extended, "available_on": available_on, "page": page, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)

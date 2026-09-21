@@ -1,3 +1,7 @@
+### 1.0.2: 2026-09-21
+
+* Reach every watched and collected show, not just 100
+
 ### 1.0.1: 2026-09-19
 
 * Report its own name, not Cronometer's

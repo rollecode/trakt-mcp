@@ -138,8 +138,36 @@ def describe(operation: dict, method: str, path: str) -> str:
     return summary
 
 
+# Trakt paginates these but its contract package omits page and limit, so the
+# generated tool could only ever reach the first 100 items and silently looked
+# like a complete answer. Every sibling endpoint declares them.
+_PAGINATION = (
+    {
+        "name": "page",
+        "in": "query",
+        "description": "The page number to retrieve",
+        "schema": {"type": "integer"},
+    },
+    {
+        "name": "limit",
+        "in": "query",
+        "description": "The number of items per page. Defaults and maximums vary by endpoint. When pagination parameters are omitted, a low default limit is applied (often 10). When a limit is provided, it is capped at the endpoint maximum (often 250); higher values are clamped rather than rejected.",
+        "schema": {"type": "integer"},
+    },
+)
+
+_MISSING_PARAMS = {
+    ("get", "/sync/watched/{type}"): _PAGINATION,
+    ("get", "/sync/collection/shows"): _PAGINATION,
+}
+
+
 def render(name: str, method: str, path: str, operation: dict) -> str:
-    params = operation.get("parameters") or []
+    params = list(operation.get("parameters") or [])
+    declared = {p.get("name") for p in params}
+    for extra in _MISSING_PARAMS.get((method, path), ()):
+        if extra["name"] not in declared:
+            params.append(extra)
     path_params = [p for p in params if p.get("in") == "path"]
     query_params = [p for p in params if p.get("in") == "query"]
     # Some APIs take form fields rather than a JSON body; those become named
