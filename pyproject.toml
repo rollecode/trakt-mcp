@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "trakt-mcp"
-version = "1.0.2"
+version = "1.0.3"
 description = "MCP server for Trakt, every API operation"
 readme = "README.md"
 license = "MIT"
@@ -13,7 +13,7 @@ keywords = ["trakt", "mcp", "tv", "servarr", "model-context-protocol"]
 
 dependencies = [
     # <2 until the MCPServer migration: 2.x moved mcp.server.fastmcp
-    "mcp>=1.29.0,<2",
+    "mcp>=1.30.0,<2",
     "httpx[socks]>=0.27.0",
     "python-dotenv>=1.0.0",
     "uvicorn>=0.30.0",
