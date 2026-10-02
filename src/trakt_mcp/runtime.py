@@ -11,6 +11,8 @@ import httpx
 from mcp.server.fastmcp import FastMCP
 from mcp.types import Icon
 
+from . import paging
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -78,6 +80,7 @@ mcp = FastMCP(
 )
 
 mcp._mcp_server.version = __version__
+paging.register(mcp)
 
 _READ = {
     "readOnlyHint": True,
@@ -286,10 +289,11 @@ def call(
             payload["result"] = None
             return json.dumps(payload)
         try:
-            payload["result"] = response.json()
+            result = response.json()
         except ValueError:
-            payload["result"] = response.text
-        return json.dumps(payload, indent=2)
+            result = response.text
+        del payload["status"]
+        return paging.shape(result, payload)
     except Exception as e:
         return _err(e)
 
